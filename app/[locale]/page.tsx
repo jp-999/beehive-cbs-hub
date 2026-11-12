@@ -22,7 +22,7 @@ export default async function HomePage({
   const tHome = await getTranslations({ locale, namespace: 'home' });
 
   // Build hero CTAs from HERO_CTAS
-  const ctaLabels = [tHero('ctaOnboarding'), tHero('ctaMaterials'), tHero('ctaCommonErrors')];
+  const ctaLabels = [tHero('ctaMaterials'), tHero('ctaCommonErrors'), tHero('ctaExamples')];
   const ctas = HERO_CTAS.map((id, i) => {
     const section = SECTIONS.find((s) => s.id === id)!;
     return {

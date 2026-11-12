@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Beehive CBs Hub",
-    "description": "Everything you need for Beehive: onboarding, guidelines, QC rubric, and common errors."
+    "description": "Everything you need for Beehive: guidelines, QC rubric, and common errors."
   },
   "skipLink": {
     "label": "Skip to main content"
@@ -24,11 +24,12 @@
   },
   "hero": {
     "title": "Beehive CBs Hub",
-    "intro": "Hi, I'm Bea 🐝 — everything you need for Beehive is here: onboarding, the guidelines in your language, the QC rubric, and the errors that send tasks back.",
+    "intro": "Hi, I'm Buzz 🐝 — everything you need for Beehive is right here: the guidelines in your language, the QC rubric, the common errors that send tasks back, and worked examples.",
     "ctaOnboarding": "Start onboarding",
     "ctaMaterials": "Open materials",
     "ctaCommonErrors": "Common errors",
-    "mascotAlt": "Bee mascot"
+    "ctaExamples": "See examples",
+    "mascotAlt": "Buzz the bee mascot"
   },
   "sections": {
     "onboarding": {
@@ -53,7 +54,7 @@
     },
     "outlier-community": {
       "title": "Outlier Community",
-      "description": "Join the Outlier community channel for updates and discussions."
+      "description": "Join the Beehive channel for news, updates, and the War Room."
     },
     "contact": {
       "title": "Who to Contact",
@@ -69,7 +70,7 @@
     "comingSoon": "Onboarding videos will appear here. Check back soon.",
     "breadcrumbHome": "Home",
     "breadcrumbSelf": "Onboarding",
-    "stageComingSoon": "Coming soon — building in the next step.",
+    "stageComingSoon": "Coming soon.",
     "videoComingSoon": "Video URL coming soon",
     "videosLabel": "Onboarding videos"
   },
@@ -82,7 +83,7 @@
     "jumpToSection": "Jump to section",
     "rubricLink": "QC Spec Rubric",
     "playbooksLink": "Eval Playbooks",
-    "stageComingSoon": "Coming soon — building in the next step."
+    "stageComingSoon": "Coming soon."
   },
   "rubric": {
     "title": "QC Spec Rubric",
@@ -106,7 +107,7 @@
     "col1_2": "1–2",
     "col3_4": "3–4",
     "col5": "5",
-    "stageComingSoon": "Coming soon — building in the next step."
+    "stageComingSoon": "Coming soon."
   },
   "commonErrors": {
     "title": "Common Errors",
@@ -116,12 +117,12 @@
     "redoGroup": "Redo Errors",
     "redoDescription": "Errors that require the task to be redone.",
     "formGroup": "Form Errors",
-    "formDescription": "Errors in form submission.",
+    "formDescription": "Errors QC can correct, but each one counts against the task.",
     "divergence": {},
     "slide13Note": "Instructions are canonical: this slide lists tie-breakers as Country fit → Outcome → User experience. Beehive Instructions §11 give the canonical order: Outcome → Trust → Effort & Trajectory → Communication, Country Fit & Polish. Follow the Instructions.",
     "slide13LinkText": "§11 Ranking the three models",
     "slide13LinkHash": "11-ranking-the-three-models-changed",
-    "stageComingSoon": "Coming soon — building in the next step."
+    "stageComingSoon": "Coming soon."
   },
   "examples": {
     "title": "Examples",
@@ -130,14 +131,14 @@
     "breadcrumbSelf": "Examples",
     "tableHeading": "Example Template",
     "comingSoon": "Worked examples are being prepared.",
-    "stageComingSoon": "Coming soon — building in the next step."
+    "stageComingSoon": "Coming soon."
   },
   "accounts": {
     "title": "Accounts & Setup",
     "description": "New email, Claude Max 5x, ChatGPT Plus, and demo account setup.",
     "breadcrumbHome": "Home",
     "breadcrumbSelf": "Accounts & Setup",
-    "stageComingSoon": "Coming soon — building in the next step."
+    "stageComingSoon": "Coming soon."
   },
   "contact": {
     "title": "Who to Contact",
@@ -145,10 +146,14 @@
     "breadcrumbHome": "Home",
     "breadcrumbSelf": "Who to Contact",
     "yourQMs": "Your QMs",
+    "qmsBody": "Your QMs are the same team across Beehive — reach them in the War Room, or ask in the Outlier Community channel.",
     "warRoom": "War Room",
+    "warRoomLink": "Join the War Room (Google Meet)",
     "dashboard": "Dashboard",
-    "community": "Community",
-    "stageComingSoon": "Coming soon — building in the next step."
+    "dashboardLink": "Open your dashboard",
+    "community": "Outlier Community",
+    "communityLink": "Open the Beehive channel",
+    "stageComingSoon": "Coming soon."
   },
   "placeholder": {
     "label": "Placeholder",
@@ -157,7 +162,7 @@
     "videoUrl": "Video URL coming soon",
     "linkComingSoon": "Link coming soon",
     "contactDetails": "Contact details coming soon",
-    "mascotName": "Mascot name TBD — currently 'Bea'"
+    "mascotName": "Mascot name"
   },
   "fallbackNotice": {
     "message": "Shown in English — a translation isn't available yet."

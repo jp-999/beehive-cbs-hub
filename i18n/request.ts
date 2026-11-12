@@ -24,9 +24,16 @@ function mergeDeep(target: Messages, source: Messages): Messages {
   return result;
 }
 
+// English is the complete base. Locale catalogs (fr-FR, de-DE, ja-JP, ko-KR, pt-BR)
+// are registered here as they are authored; until a locale has a catalog it renders
+// English chrome via the deep-merge fallback below.
 const messageLoaders: Record<string, () => Promise<Messages>> = {
   en: () => import('../messages/en.json').then((m) => m.default as unknown as Messages),
-  fr: () => import('../messages/fr.json').then((m) => m.default as unknown as Messages),
+  'fr-FR': () => import('../messages/fr-FR.json').then((m) => m.default as unknown as Messages),
+  'de-DE': () => import('../messages/de-DE.json').then((m) => m.default as unknown as Messages),
+  'ja-JP': () => import('../messages/ja-JP.json').then((m) => m.default as unknown as Messages),
+  'ko-KR': () => import('../messages/ko-KR.json').then((m) => m.default as unknown as Messages),
+  'pt-BR': () => import('../messages/pt-BR.json').then((m) => m.default as unknown as Messages),
 };
 
 export default getRequestConfig(async ({ requestLocale }) => {

@@ -13,7 +13,7 @@ export interface HtmlSection {
 }
 
 // ── File resolution ──────────────────────────────────────────────────
-export type Locale = 'en' | 'fr';
+export type Locale = 'en' | 'fr-FR' | 'de-DE' | 'ja-JP' | 'ko-KR' | 'pt-BR';
 
 export interface ContentFile {
   text: string;

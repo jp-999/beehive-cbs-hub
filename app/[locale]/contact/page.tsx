@@ -6,7 +6,6 @@ import { siteConfig } from '@/site.config';
 import PageHeader from '@/components/PageHeader';
 import Callout from '@/components/Callout';
 import LinkOrPlaceholder from '@/components/LinkOrPlaceholder';
-import PlaceholderBadge from '@/components/PlaceholderBadge';
 
 export default async function ContactPage({
   params,
@@ -19,7 +18,6 @@ export default async function ContactPage({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: 'contact' });
-  const tPlaceholder = await getTranslations({ locale, namespace: 'placeholder' });
 
   return (
     <>
@@ -33,45 +31,29 @@ export default async function ContactPage({
       />
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', paddingBottom: '48px' }}>
-        {/* QMs */}
+        {/* QMs — same team, reached via the War Room */}
         <Callout tone="info" title={t('yourQMs')}>
-          {siteConfig.qms.status === 'placeholder' ? (
-            <span>
-              {tPlaceholder('contactDetails')}
-              <PlaceholderBadge note={siteConfig.qms.note} />
-            </span>
-          ) : (
-            <ul style={{ margin: 0, padding: '0 0 0 20px' }}>
-              {siteConfig.qms.value.map((qm) => (
-                <li key={qm.name}>
-                  <strong>{qm.role}:</strong> {qm.name}{' '}
-                  <LinkOrPlaceholder link={qm.channel} external>
-                    Contact
-                  </LinkOrPlaceholder>
-                </li>
-              ))}
-            </ul>
-          )}
+          <p style={{ margin: 0 }}>{t('qmsBody')}</p>
         </Callout>
 
         {/* War Room */}
         <Callout tone="info" title={t('warRoom')}>
           <LinkOrPlaceholder link={siteConfig.links.warRoom} external>
-            {t('warRoom')}
+            {t('warRoomLink')}
           </LinkOrPlaceholder>
         </Callout>
 
         {/* Dashboard */}
         <Callout tone="info" title={t('dashboard')}>
           <LinkOrPlaceholder link={siteConfig.links.dashboard} external>
-            {t('dashboard')}
+            {t('dashboardLink')}
           </LinkOrPlaceholder>
         </Callout>
 
         {/* Outlier Community */}
         <Callout tone="info" title={t('community')}>
           <LinkOrPlaceholder link={siteConfig.links.outlierCommunity} external>
-            {t('community')}
+            {t('communityLink')}
           </LinkOrPlaceholder>
         </Callout>
       </div>
