@@ -31,7 +31,7 @@
   },
   "sections": {
     "onboarding": { "title": "Einführung", "description": "Lies deine Aufgabenzeile, schließe die Einrichtung ab und lerne den Einreichungsablauf." },
-    "materials": { "title": "Materialien", "description": "Die vollständigen Beehive-Anweisungen, die QC-Rubrik und die Eval-Playbooks." },
+    "materials": { "title": "Materialien", "description": "Die vollständigen Beehive-Anweisungen und die QC-Rubrik." },
     "accounts": { "title": "Konten & Einrichtung", "description": "Neue E-Mail einrichten, Claude Max 5x + ChatGPT Plus kaufen und dein Demokonto konfigurieren." },
     "common-errors": { "title": "Häufige Fehler", "description": "Interaktives SxSxS-Fehlerdeck — Gruppen „Neu machen“ und „Formfehler“." },
     "examples": { "title": "Beispiele", "description": "Vom QC bewertete Beispiele mit Zufriedenheit, Problemen, Rubrik und Länderpassung." },
@@ -51,13 +51,12 @@
   },
   "materials": {
     "title": "Materialien",
-    "description": "Die vollständigen Beehive-Anweisungen, die QC-Rubrik und die Eval-Playbooks.",
+    "description": "Die vollständigen Beehive-Anweisungen und die QC-Rubrik.",
     "breadcrumbHome": "Start",
     "breadcrumbSelf": "Materialien",
     "tocLabel": "Inhalt",
     "jumpToSection": "Zum Abschnitt springen",
     "rubricLink": "QC-Rubrik",
-    "playbooksLink": "Eval-Playbooks",
     "stageComingSoon": "Demnächst."
   },
   "rubric": {

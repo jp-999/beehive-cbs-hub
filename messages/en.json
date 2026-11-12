@@ -38,7 +38,7 @@
     },
     "materials": {
       "title": "Materials",
-      "description": "Full Beehive Instructions, the QC Spec rubric, and eval playbooks."
+      "description": "The full Beehive Instructions and the QC Spec rubric."
     },
     "accounts": {
       "title": "Accounts & Setup",
@@ -76,13 +76,12 @@
   },
   "materials": {
     "title": "Materials",
-    "description": "Full Beehive Instructions, the QC Spec rubric, and eval playbooks.",
+    "description": "The full Beehive Instructions and the QC Spec rubric.",
     "breadcrumbHome": "Home",
     "breadcrumbSelf": "Materials",
     "tocLabel": "Page contents",
     "jumpToSection": "Jump to section",
     "rubricLink": "QC Spec Rubric",
-    "playbooksLink": "Eval Playbooks",
     "stageComingSoon": "Coming soon."
   },
   "rubric": {

@@ -31,7 +31,7 @@
   },
   "sections": {
     "onboarding": { "title": "オンボーディング", "description": "タスク行を読み、セットアップを完了し、提出の流れを学びます。" },
-    "materials": { "title": "資料", "description": "Beehive の完全なインストラクション、QC ルーブリック、評価プレイブック。" },
+    "materials": { "title": "資料", "description": "Beehive の完全なインストラクションと QC ルーブリック。" },
     "accounts": { "title": "アカウントとセットアップ", "description": "新しいメールの作成、Claude Max 5x と ChatGPT Plus の購入、デモアカウントの設定。" },
     "common-errors": { "title": "よくあるエラー", "description": "インタラクティブな SxSxS エラー集 — 「やり直し」と「フォームエラー」のグループ。" },
     "examples": { "title": "実例", "description": "満足度、問題点、ルーブリック、国適合性を含む QC 採点済みの実例。" },
@@ -51,13 +51,12 @@
   },
   "materials": {
     "title": "資料",
-    "description": "Beehive の完全なインストラクション、QC ルーブリック、評価プレイブック。",
+    "description": "Beehive の完全なインストラクションと QC ルーブリック。",
     "breadcrumbHome": "ホーム",
     "breadcrumbSelf": "資料",
     "tocLabel": "目次",
     "jumpToSection": "セクションへ移動",
     "rubricLink": "QC ルーブリック",
-    "playbooksLink": "評価プレイブック",
     "stageComingSoon": "近日公開。"
   },
   "rubric": {

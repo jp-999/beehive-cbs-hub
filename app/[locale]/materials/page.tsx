@@ -60,24 +60,6 @@ export default async function MaterialsPage({
         >
           📊 {t('rubricLink')}
         </Link>
-        <Link
-          href="/materials/playbooks"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '8px 16px',
-            borderRadius: 'var(--radius-md)',
-            background: 'var(--color-bg-surface)',
-            border: '1px solid var(--color-border-default)',
-            color: 'var(--color-amber-400)',
-            fontSize: '0.875rem',
-            fontWeight: 600,
-            textDecoration: 'none',
-          }}
-        >
-          📋 {t('playbooksLink')}
-        </Link>
       </div>
 
       <FallbackNotice show={instructions.isFallback} />

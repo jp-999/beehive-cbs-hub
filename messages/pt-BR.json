@@ -31,7 +31,7 @@
   },
   "sections": {
     "onboarding": { "title": "Integração", "description": "Leia a linha da sua tarefa, conclua a configuração e aprenda o fluxo de envio." },
-    "materials": { "title": "Materiais", "description": "As instruções completas do Beehive, a rubrica de QC e os playbooks de avaliação." },
+    "materials": { "title": "Materiais", "description": "As instruções completas do Beehive e a rubrica de QC." },
     "accounts": { "title": "Contas e configuração", "description": "Configurar um novo e-mail, comprar Claude Max 5x + ChatGPT Plus e configurar sua conta de demonstração." },
     "common-errors": { "title": "Erros comuns", "description": "Apresentação interativa de erros SxSxS — grupos Refazer e Erro de formulário." },
     "examples": { "title": "Exemplos", "description": "Exemplos pontuados pelo QC com satisfação, problemas, rubrica e adequação ao país." },
@@ -51,13 +51,12 @@
   },
   "materials": {
     "title": "Materiais",
-    "description": "As instruções completas do Beehive, a rubrica de QC e os playbooks de avaliação.",
+    "description": "As instruções completas do Beehive e a rubrica de QC.",
     "breadcrumbHome": "Início",
     "breadcrumbSelf": "Materiais",
     "tocLabel": "Conteúdo da página",
     "jumpToSection": "Ir para a seção",
     "rubricLink": "Rubrica de QC",
-    "playbooksLink": "Playbooks de avaliação",
     "stageComingSoon": "Em breve."
   },
   "rubric": {

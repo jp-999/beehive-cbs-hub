@@ -31,7 +31,7 @@
   },
   "sections": {
     "onboarding": { "title": "Intégration", "description": "Lisez votre ligne de tâche, faites la configuration et apprenez le processus de soumission." },
-    "materials": { "title": "Ressources", "description": "Les consignes Beehive complètes, la grille QC et les guides d'évaluation." },
+    "materials": { "title": "Ressources", "description": "Les consignes Beehive complètes et la grille QC." },
     "accounts": { "title": "Comptes et configuration", "description": "Création d'une nouvelle adresse e-mail, achat de Claude Max 5x + ChatGPT Plus, et configuration de votre compte démo." },
     "common-errors": { "title": "Erreurs courantes", "description": "Présentation interactive des erreurs SxSxS — groupes À refaire et Erreurs de forme." },
     "examples": { "title": "Exemples", "description": "Exemples corrigés par le QC avec satisfaction, problèmes, grille et adéquation au pays." },
@@ -51,13 +51,12 @@
   },
   "materials": {
     "title": "Ressources",
-    "description": "Les consignes Beehive complètes, la grille QC et les guides d'évaluation.",
+    "description": "Les consignes Beehive complètes et la grille QC.",
     "breadcrumbHome": "Accueil",
     "breadcrumbSelf": "Ressources",
     "tocLabel": "Sommaire",
     "jumpToSection": "Aller à la section",
     "rubricLink": "Grille QC",
-    "playbooksLink": "Guides d'évaluation",
     "stageComingSoon": "Bientôt disponible."
   },
   "rubric": {

@@ -31,7 +31,7 @@
   },
   "sections": {
     "onboarding": { "title": "온보딩", "description": "작업 행을 읽고, 설정을 완료하고, 제출 흐름을 배웁니다." },
-    "materials": { "title": "자료", "description": "전체 Beehive 지침, QC 루브릭, 평가 플레이북." },
+    "materials": { "title": "자료", "description": "전체 Beehive 지침과 QC 루브릭." },
     "accounts": { "title": "계정 및 설정", "description": "새 이메일 설정, Claude Max 5x + ChatGPT Plus 구매, 데모 계정 구성." },
     "common-errors": { "title": "흔한 오류", "description": "인터랙티브 SxSxS 오류 자료 — ‘재작업’과 ‘형식 오류’ 그룹." },
     "examples": { "title": "예시", "description": "만족도, 문제, 루브릭, 국가 적합성이 포함된 QC 채점 예시." },
@@ -51,13 +51,12 @@
   },
   "materials": {
     "title": "자료",
-    "description": "전체 Beehive 지침, QC 루브릭, 평가 플레이북.",
+    "description": "전체 Beehive 지침과 QC 루브릭.",
     "breadcrumbHome": "홈",
     "breadcrumbSelf": "자료",
     "tocLabel": "목차",
     "jumpToSection": "섹션으로 이동",
     "rubricLink": "QC 루브릭",
-    "playbooksLink": "평가 플레이북",
     "stageComingSoon": "곧 제공됩니다."
   },
   "rubric": {

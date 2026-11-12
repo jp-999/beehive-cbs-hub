@@ -116,15 +116,3 @@ export interface ExamplesDoc {
   note: string;
   examples: RatedExample[];
 }
-
-// ── (e) Eval Playbooks ───────────────────────────────────────────────
-export interface PlaybookMeta {
-  slug: string;
-  title: string;
-  file: string;
-}
-
-export interface PlaybookDoc extends PlaybookMeta {
-  sections: HtmlSection[];
-  lead: string;
-}
