@@ -1,0 +1,7 @@
+.npm-cache
+node_modules
+.next
+out
+public/media
+.devteam
+.DS_Store

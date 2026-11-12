@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "title": "Beehive CBs Hub",
+    "description": "Everything you need for Beehive: onboarding, guidelines, QC rubric, and common errors."
+  },
+  "skipLink": {
+    "label": "Skip to main content"
+  },
+  "nav": {
+    "home": "Home",
+    "onboarding": "Onboarding",
+    "materials": "Materials",
+    "commonErrors": "Common Errors",
+    "examples": "Examples",
+    "contact": "Contact",
+    "outlierCommunity": "Outlier Community"
+  },
+  "languageSwitcher": {
+    "label": "Switch language (current: {locale})",
+    "trigger": "Switch language",
+    "heading": "Choose your language",
+    "openMenu": "Open language menu",
+    "closeMenu": "Close language menu"
+  },
+  "hero": {
+    "title": "Beehive CBs Hub",
+    "intro": "Hi, I'm Bea 🐝 — everything you need for Beehive is here: onboarding, the guidelines in your language, the QC rubric, and the errors that send tasks back.",
+    "ctaOnboarding": "Start onboarding",
+    "ctaMaterials": "Open materials",
+    "ctaCommonErrors": "Common errors",
+    "mascotAlt": "Bee mascot"
+  },
+  "sections": {
+    "onboarding": {
+      "title": "Onboarding",
+      "description": "Read your task row, complete setup, and learn the submission flow."
+    },
+    "materials": {
+      "title": "Materials",
+      "description": "Full Beehive Instructions, the QC Spec rubric, and eval playbooks."
+    },
+    "accounts": {
+      "title": "Accounts & Setup",
+      "description": "New email setup, buy Claude Max 5x + ChatGPT Plus, and configure your demo account."
+    },
+    "common-errors": {
+      "title": "Common Errors",
+      "description": "Interactive SxSxS common-errors deck — Redo and Form Error groups."
+    },
+    "examples": {
+      "title": "Examples",
+      "description": "QC-scored worked examples with satisfaction, issues, rubric, and country fit."
+    },
+    "outlier-community": {
+      "title": "Outlier Community",
+      "description": "Join the Outlier community channel for updates and discussions."
+    },
+    "contact": {
+      "title": "Who to Contact",
+      "description": "Find your QMs, the War Room, community link, and dashboard."
+    }
+  },
+  "home": {
+    "cardGridLabel": "Hub sections"
+  },
+  "onboarding": {
+    "title": "Onboarding",
+    "description": "Reading your task row, setup, and the submission flow.",
+    "comingSoon": "Onboarding videos will appear here. Check back soon.",
+    "breadcrumbHome": "Home",
+    "breadcrumbSelf": "Onboarding",
+    "stageComingSoon": "Coming soon — building in the next step.",
+    "videoComingSoon": "Video URL coming soon",
+    "videosLabel": "Onboarding videos"
+  },
+  "materials": {
+    "title": "Materials",
+    "description": "Full Beehive Instructions, the QC Spec rubric, and eval playbooks.",
+    "breadcrumbHome": "Home",
+    "breadcrumbSelf": "Materials",
+    "tocLabel": "Page contents",
+    "jumpToSection": "Jump to section",
+    "rubricLink": "QC Spec Rubric",
+    "playbooksLink": "Eval Playbooks",
+    "stageComingSoon": "Coming soon — building in the next step."
+  },
+  "rubric": {
+    "title": "QC Spec Rubric",
+    "description": "Searchable and filterable QC output rubric.",
+    "breadcrumbHome": "Home",
+    "breadcrumbMaterials": "Materials",
+    "breadcrumbSelf": "QC Spec Rubric",
+    "searchLabel": "Search rubric dimensions",
+    "searchPlaceholder": "Search dimensions…",
+    "filterLabel": "Filter by dimension",
+    "allDimensions": "All dimensions",
+    "showing": "Showing {shown} of {total}",
+    "noResults": "No dimensions match your search. Try a different term.",
+    "bandFail": "1–2 (Fail)",
+    "bandNonFail": "3–4 (Non-Fail)",
+    "bandNoIssues": "5 (No Issues)",
+    "notApplicable": "Not applicable",
+    "colDimension": "Dimension",
+    "colSubDimension": "Sub-Dimension",
+    "colNotes": "Notes for Auditors",
+    "col1_2": "1–2",
+    "col3_4": "3–4",
+    "col5": "5",
+    "stageComingSoon": "Coming soon — building in the next step."
+  },
+  "commonErrors": {
+    "title": "Common Errors",
+    "description": "SxSxS common errors grouped by Redo and Form Error type.",
+    "breadcrumbHome": "Home",
+    "breadcrumbSelf": "Common Errors",
+    "redoGroup": "Redo Errors",
+    "redoDescription": "Errors that require the task to be redone.",
+    "formGroup": "Form Errors",
+    "formDescription": "Errors in form submission.",
+    "divergence": {},
+    "slide13Note": "Instructions are canonical: this slide lists tie-breakers as Country fit → Outcome → User experience. Beehive Instructions §11 give the canonical order: Outcome → Trust → Effort & Trajectory → Communication, Country Fit & Polish. Follow the Instructions.",
+    "slide13LinkText": "§11 Ranking the three models",
+    "slide13LinkHash": "11-ranking-the-three-models-changed",
+    "stageComingSoon": "Coming soon — building in the next step."
+  },
+  "examples": {
+    "title": "Examples",
+    "description": "QC-scored worked examples from the Beehive Instructions.",
+    "breadcrumbHome": "Home",
+    "breadcrumbSelf": "Examples",
+    "tableHeading": "Example Template",
+    "comingSoon": "Worked examples are being prepared.",
+    "stageComingSoon": "Coming soon — building in the next step."
+  },
+  "accounts": {
+    "title": "Accounts & Setup",
+    "description": "New email, Claude Max 5x, ChatGPT Plus, and demo account setup.",
+    "breadcrumbHome": "Home",
+    "breadcrumbSelf": "Accounts & Setup",
+    "stageComingSoon": "Coming soon — building in the next step."
+  },
+  "contact": {
+    "title": "Who to Contact",
+    "description": "Find your QMs, the War Room, and community links.",
+    "breadcrumbHome": "Home",
+    "breadcrumbSelf": "Who to Contact",
+    "yourQMs": "Your QMs",
+    "warRoom": "War Room",
+    "dashboard": "Dashboard",
+    "community": "Community",
+    "stageComingSoon": "Coming soon — building in the next step."
+  },
+  "placeholder": {
+    "label": "Placeholder",
+    "ariaLabel": "This is a placeholder — content will be added by the team",
+    "comingSoon": "Coming soon",
+    "videoUrl": "Video URL coming soon",
+    "linkComingSoon": "Link coming soon",
+    "contactDetails": "Contact details coming soon",
+    "mascotName": "Mascot name TBD — currently 'Bea'"
+  },
+  "fallbackNotice": {
+    "message": "Shown in English — a translation isn't available yet."
+  },
+  "footer": {
+    "brand": "🐝 Beehive CBs Hub",
+    "copyright": "© Beehive · Outlier AI",
+    "languageHint": "Available in multiple languages — use the switcher above.",
+    "contactLink": "Contact"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "This page doesn't exist or was moved.",
+    "goHome": "Go to home"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "skipLink": {
+    "label": "Aller au contenu principal"
+  },
+  "nav": {
+    "home": "Accueil",
+    "onboarding": "Intégration",
+    "materials": "Matériaux",
+    "commonErrors": "Erreurs courantes",
+    "examples": "Exemples",
+    "contact": "Contact",
+    "outlierCommunity": "Communauté Outlier"
+  },
+  "languageSwitcher": {
+    "label": "Changer de langue (actuel : {locale})",
+    "trigger": "Changer de langue",
+    "heading": "Choisissez votre langue",
+    "openMenu": "Ouvrir le menu de langue",
+    "closeMenu": "Fermer le menu de langue"
+  },
+  "footer": {
+    "brand": "🐝 Beehive CBs Hub",
+    "copyright": "© Beehive · Outlier AI",
+    "contactLink": "Contact",
+    "languageHint": "Disponible en plusieurs langues — utilisez le sélecteur ci-dessus."
+  },
+  "notFound": {
+    "title": "Page non trouvée",
+    "description": "Cette page n'existe pas ou a été déplacée.",
+    "goHome": "Aller à l'accueil"
+  },
+  "fallbackNotice": {
+    "message": "Affiché en anglais — une traduction n'est pas encore disponible."
+  },
+  "placeholder": {
+    "comingSoon": "Bientôt disponible"
+  }
+}
