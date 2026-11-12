@@ -22,9 +22,8 @@ export default async function AccountsPage({
   const accountsSection = await getInstructionSection(locale, SECTION_IDS.accounts);
   const errors = await getCommonErrors(locale);
 
-  // Model/mode (#7) slides: redo slides with errorNumbers containing 7
+  // Model/mode (#7) slides: redo slides whose error numbers include 7
   const modelSlides = errors.redo.filter((s) => s.errorNumbers.includes(7));
-
   const isFallback = accountsSection.isFallback;
 
   return (
@@ -40,16 +39,15 @@ export default async function AccountsPage({
 
       <FallbackNotice show={isFallback} />
 
-      <div
-        lang={isFallback ? 'en' : undefined}
-        style={{ paddingBottom: '48px' }}
-      >
-        {/* Accounts section from Instructions */}
-        <Prose html={accountsSection.html} />
+      <div lang={isFallback ? 'en' : undefined} style={{ paddingBottom: '48px' }}>
+        {/* Accounts & subscriptions section from the Instructions */}
+        <div className="doc-card">
+          <Prose html={accountsSection.html} />
+        </div>
 
-        {/* Model/mode slides from common errors */}
+        {/* Model / mode setup (#7) from the common-errors deck */}
         {modelSlides.length > 0 && (
-          <section style={{ marginTop: '40px' }}>
+          <section style={{ marginTop: '32px' }}>
             <h2
               style={{
                 fontSize: '1.25rem',
@@ -61,13 +59,9 @@ export default async function AccountsPage({
               Model and mode setup
             </h2>
             {modelSlides.map((slide) => (
-              <div
-                key={slide.id}
-                id={slide.id}
-                style={{ marginBottom: '24px' }}
-              >
+              <section key={slide.id} id={slide.id} className="doc-card">
                 <Prose html={slide.html} />
-              </div>
+              </section>
             ))}
           </section>
         )}

@@ -72,7 +72,7 @@ export default async function CommonErrorsPage({
 
         {/* Before slides (audit overview etc.) */}
         {errors.before.map((slide) => (
-          <section key={slide.id} id={slide.id} style={{ marginBottom: '24px' }}>
+          <section key={slide.id} id={slide.id} className="doc-card">
             <h2 style={slideHeadingStyle}>{slide.heading}</h2>
             <Prose html={slide.html} />
           </section>
@@ -101,7 +101,7 @@ export default async function CommonErrorsPage({
 
         {/* After slides (evidence/integrity, pre-submit checklist) */}
         {errors.after.map((slide) => (
-          <section key={slide.id} id={slide.id} style={{ marginBottom: '24px' }}>
+          <section key={slide.id} id={slide.id} className="doc-card">
             <h2 style={slideHeadingStyle}>{slide.heading}</h2>
             <Prose html={slide.html} />
           </section>

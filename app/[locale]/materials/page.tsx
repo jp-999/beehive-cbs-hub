@@ -87,10 +87,14 @@ export default async function MaterialsPage({
           style={{ flex: 1, minWidth: 0 }}
         >
           {instructions.lead && (
-            <Prose html={instructions.lead} />
+            <div className="doc-card">
+              <Prose html={instructions.lead} />
+            </div>
           )}
           {instructions.sections.map((section) => (
-            <Prose key={section.id} html={section.html} />
+            <section key={section.id} id={section.id} className="doc-card">
+              <Prose html={section.html} />
+            </section>
           ))}
         </div>
       </div>

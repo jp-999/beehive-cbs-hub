@@ -3,10 +3,13 @@ export type Placeholder<T> =
   | { status: 'placeholder'; note: string; preview?: T }
   | { status: 'ready'; value: T };
 
-interface Contact {
-  role: string;
+export interface QM {
   name: string;
-  channel: Placeholder<string>;
+  role?: string;
+  languages?: string;
+  hours?: string;
+  /** Outlier Community handle, without the leading @. */
+  oc: string;
 }
 
 interface SiteConfig {
@@ -23,8 +26,9 @@ interface SiteConfig {
     outlierCommunity: Placeholder<string>;
     warRoom: Placeholder<string>;
     dashboard: Placeholder<string>;
+    demoAccountClaim: Placeholder<string>;
   };
-  qms: Placeholder<Contact[]>;
+  qms: QM[];
 }
 
 export const siteConfig: SiteConfig = {
@@ -38,43 +42,24 @@ export const siteConfig: SiteConfig = {
     { code: 'pt-BR', label: 'Português (BR)' },
   ],
   defaultLocale: 'en',
-  mascot: {
-    name: { status: 'ready', value: 'Buzz' },
-  },
+  mascot: { name: { status: 'ready', value: 'Buzz' } },
   // Onboarding tab is dropped for now; these stay for easy re-enable later.
   onboardingVideos: [
-    {
-      id: 'task-row',
-      title: { status: 'placeholder', preview: 'Reading your task row', note: 'Onboarding video title — human to confirm' },
-      url: { status: 'placeholder', note: 'Onboarding video URL for task-row — human to provide' },
-    },
-    {
-      id: 'setup',
-      title: { status: 'placeholder', preview: 'Setup', note: 'Onboarding video title — human to confirm' },
-      url: { status: 'placeholder', note: 'Onboarding video URL for setup — human to provide' },
-    },
-    {
-      id: 'submission',
-      title: { status: 'placeholder', preview: 'Submission flow', note: 'Onboarding video title — human to confirm' },
-      url: { status: 'placeholder', note: 'Onboarding video URL for submission — human to provide' },
-    },
+    { id: 'task-row', title: { status: 'placeholder', preview: 'Reading your task row', note: 'video title TBD' }, url: { status: 'placeholder', note: 'video URL TBD' } },
+    { id: 'setup', title: { status: 'placeholder', preview: 'Setup', note: 'video title TBD' }, url: { status: 'placeholder', note: 'video URL TBD' } },
+    { id: 'submission', title: { status: 'placeholder', preview: 'Submission flow', note: 'video title TBD' }, url: { status: 'placeholder', note: 'video URL TBD' } },
   ],
   links: {
-    outlierCommunity: {
-      status: 'ready',
-      value: 'https://community.outlier.ai/c/beehive-channel/18721',
-    },
-    warRoom: {
-      status: 'ready',
-      value: 'https://meet.google.com/nmj-vgss-ohb',
-    },
-    dashboard: {
-      status: 'placeholder',
-      note: 'Dashboard URL — same as Nectarbloom; human to paste (that repo was private/inaccessible).',
-    },
+    outlierCommunity: { status: 'ready', value: 'https://community.outlier.ai/c/beehive-channel/18721' },
+    warRoom: { status: 'ready', value: 'https://meet.google.com/nmj-vgss-ohb' },
+    dashboard: { status: 'ready', value: 'https://app.outlier.ai/' },
+    demoAccountClaim: { status: 'ready', value: 'https://app.outlier.ai/demo-account-claim' },
   },
-  qms: {
-    status: 'placeholder',
-    note: 'QMs are the same team, reached via the War Room. A named list is optional.',
-  },
+  qms: [
+    { name: 'Huan Francischinelli', role: 'QM', hours: '7 AM – 3 PM PST', oc: 'Huan_QM' },
+    { name: 'Yash Attri', role: 'QM · Usually helps with UK tasks', languages: 'English (UK)', hours: '2:30 AM – 10:30 AM PST (3 PM – 11 PM IST)', oc: 'yash.attri' },
+    { name: 'Jayanth Peddi', role: 'QM', hours: '12 PM – 8 PM IST', oc: 'Jayanth_Peddi_QM' },
+    { name: 'Davide Sell', role: 'QM · Usually helps with Korean tasks', languages: 'Korean', hours: 'Mon–Fri 10 AM – 7 PM KST (6 PM – 3 AM PST), some weekend hours', oc: 'Davide_QMO_IT' },
+    { name: 'Hiro Yoshioka', role: 'QM · Japanese contributors', languages: 'Japanese', oc: 'Hiro_QMO_JP' },
+  ],
 };

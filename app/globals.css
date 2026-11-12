@@ -183,3 +183,8 @@ a:hover {
 .prose thead th { background: var(--color-bg-surface); color: var(--color-text-primary); font-weight: 700; }
 .prose tbody tr:nth-child(even) { background: rgba(245, 158, 11, 0.03); }
 .prose tbody td:first-child { color: var(--color-text-primary); font-weight: 600; }
+
+/* ── Content section cards (wraps long docs into readable blocks) ── */
+.doc-card { background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-lg); padding: 20px 24px; margin: 0 0 20px; box-shadow: var(--shadow-card); }
+.doc-card > :first-child { margin-top: 0; }
+.doc-card > :last-child { margin-bottom: 0; }
