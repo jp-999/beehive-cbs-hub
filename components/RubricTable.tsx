@@ -9,22 +9,12 @@ interface RubricTableProps {
 }
 
 const BAND_STYLES = {
-  fail: {
-    bg: '#3B0D0D',
-    text: '#FCA5A5',
-    header: '#7F1D1D',
-  },
-  nonfail: {
-    bg: '#3D2A08',
-    text: '#FDE68A',
-    header: '#78350F',
-  },
-  noissues: {
-    bg: '#0D2B1A',
-    text: '#86EFAC',
-    header: '#14532D',
-  },
+  fail: { bg: '#3B0D0D', text: '#FCA5A5', header: '#7F1D1D' },
+  nonfail: { bg: '#3D2A08', text: '#FDE68A', header: '#78350F' },
+  noissues: { bg: '#0D2B1A', text: '#86EFAC', header: '#14532D' },
 };
+
+const CELL_BORDER = '1px solid var(--color-border-default)';
 
 function BandCell({ band, style }: {
   band: RubricRow['band1_2'] | null;
@@ -34,12 +24,13 @@ function BandCell({ band, style }: {
     return (
       <td
         style={{
-          background: 'var(--color-bg-surface)',
+          background: 'var(--color-bg-base)',
           color: 'var(--color-text-muted)',
           padding: '12px',
           fontSize: '0.8125rem',
           verticalAlign: 'top',
           whiteSpace: 'pre-line',
+          border: CELL_BORDER,
         }}
       >
         —<span className="sr-only">Not applicable</span>
@@ -55,6 +46,8 @@ function BandCell({ band, style }: {
         fontSize: '0.8125rem',
         verticalAlign: 'top',
         whiteSpace: 'pre-line',
+        border: CELL_BORDER,
+        lineHeight: 1.5,
       }}
     >
       {band.label && (
@@ -163,12 +156,7 @@ export default function RubricTable({ rows, dimensions }: RubricTableProps) {
 
       {/* Band legend */}
       <div
-        style={{
-          display: 'flex',
-          gap: '12px',
-          marginBottom: '16px',
-          flexWrap: 'wrap',
-        }}
+        style={{ display: 'flex', gap: '12px', marginBottom: '16px', flexWrap: 'wrap' }}
         aria-label="Band colour legend"
       >
         {[
@@ -200,11 +188,7 @@ export default function RubricTable({ rows, dimensions }: RubricTableProps) {
         role="status"
         aria-live="polite"
         aria-atomic="true"
-        style={{
-          fontSize: '0.8125rem',
-          color: 'var(--color-text-muted)',
-          marginBottom: '12px',
-        }}
+        style={{ fontSize: '0.8125rem', color: 'var(--color-text-muted)', marginBottom: '12px' }}
       >
         Showing {shown} of {total}
       </div>
@@ -229,12 +213,12 @@ export default function RubricTable({ rows, dimensions }: RubricTableProps) {
             <thead>
               <tr>
                 {([
-                  { label: 'Dimension', width: '120px', col: 'dimension', header: null as string|null, text: null as string|null },
-                  { label: 'Sub-Dimension', width: '160px', col: 'sub', header: null as string|null, text: null as string|null },
-                  { label: 'Notes for Auditors', width: '240px', col: 'notes', header: null as string|null, text: null as string|null },
-                  { label: '1–2', width: '200px', col: '1-2', header: BAND_STYLES.fail.header, text: BAND_STYLES.fail.text },
-                  { label: '3–4', width: '200px', col: '3-4', header: BAND_STYLES.nonfail.header, text: BAND_STYLES.nonfail.text },
-                  { label: '5', width: '200px', col: '5', header: BAND_STYLES.noissues.header, text: BAND_STYLES.noissues.text },
+                  { label: 'Dimension', width: '120px', header: null as string | null, text: null as string | null },
+                  { label: 'Sub-Dimension', width: '150px', header: null as string | null, text: null as string | null },
+                  { label: 'Notes for Auditors', width: '240px', header: null as string | null, text: null as string | null },
+                  { label: '1–2', width: '200px', header: BAND_STYLES.fail.header, text: BAND_STYLES.fail.text },
+                  { label: '3–4', width: '200px', header: BAND_STYLES.nonfail.header, text: BAND_STYLES.nonfail.text },
+                  { label: '5', width: '200px', header: BAND_STYLES.noissues.header, text: BAND_STYLES.noissues.text },
                 ] as const).map((col) => (
                   <th
                     key={col.label}
@@ -247,10 +231,7 @@ export default function RubricTable({ rows, dimensions }: RubricTableProps) {
                       fontWeight: 700,
                       fontSize: '0.8125rem',
                       minWidth: col.width,
-                      position: 'sticky',
-                      top: '64px',
-                      zIndex: 1,
-                      borderBottom: '1px solid var(--color-border-default)',
+                      border: CELL_BORDER,
                     }}
                   >
                     {col.label}
@@ -262,41 +243,15 @@ export default function RubricTable({ rows, dimensions }: RubricTableProps) {
               {rows.map((row) => (
                 <tr
                   key={row.id}
-                  style={{
-                    display: filteredIds.has(row.id) ? undefined : 'none',
-                    borderBottom: '1px solid var(--color-border-default)',
-                  }}
+                  style={{ display: filteredIds.has(row.id) ? undefined : 'none' }}
                 >
-                  <td
-                    style={{
-                      padding: '12px',
-                      fontWeight: 600,
-                      color: 'var(--color-text-primary)',
-                      verticalAlign: 'top',
-                      fontSize: '0.8125rem',
-                    }}
-                  >
+                  <td style={{ padding: '12px', fontWeight: 600, color: 'var(--color-text-primary)', verticalAlign: 'top', fontSize: '0.8125rem', border: CELL_BORDER }}>
                     {row.dimension}
                   </td>
-                  <td
-                    style={{
-                      padding: '12px',
-                      color: 'var(--color-text-secondary)',
-                      verticalAlign: 'top',
-                      fontSize: '0.8125rem',
-                    }}
-                  >
+                  <td style={{ padding: '12px', color: 'var(--color-text-secondary)', verticalAlign: 'top', fontSize: '0.8125rem', border: CELL_BORDER }}>
                     {row.subDimension}
                   </td>
-                  <td
-                    style={{
-                      padding: '12px',
-                      color: 'var(--color-text-secondary)',
-                      verticalAlign: 'top',
-                      fontSize: '0.8125rem',
-                      whiteSpace: 'pre-line',
-                    }}
-                  >
+                  <td style={{ padding: '12px', color: 'var(--color-text-secondary)', verticalAlign: 'top', fontSize: '0.8125rem', whiteSpace: 'pre-line', border: CELL_BORDER }}>
                     {row.notes ?? '—'}
                   </td>
                   <BandCell band={row.band1_2} style={BAND_STYLES.fail} />

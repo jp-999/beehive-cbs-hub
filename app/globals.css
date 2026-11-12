@@ -152,27 +152,34 @@ a:hover {
   }
 }
 
-/* ── Prose overrides (for content pages, Stage B) ── */
+/* ── Prose (rendered Markdown content) ── */
 .prose {
   color: var(--color-text-primary);
   max-width: none;
+  line-height: 1.7;
+  font-size: 0.95rem;
 }
-.prose h1,
-.prose h2,
-.prose h3 {
-  color: var(--color-text-primary);
-  font-family: var(--font-family-sans);
-}
-.prose a {
-  color: var(--color-text-link);
-}
-.prose a:hover {
-  color: var(--color-text-link-hover);
-}
-.prose code {
-  font-family: var(--font-family-mono);
-  font-size: 0.875rem;
-  background: var(--color-bg-surface);
-  padding: 2px 4px;
-  border-radius: var(--radius-sm);
-}
+.prose > :first-child { margin-top: 0; }
+.prose h1 { font-size: 1.85rem; font-weight: 800; line-height: 1.2; margin: 2rem 0 1rem; color: var(--color-text-primary); }
+.prose h2 { font-size: 1.35rem; font-weight: 700; line-height: 1.25; margin: 2.25rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--color-border-default); color: var(--color-text-primary); scroll-margin-top: 84px; }
+.prose h3 { font-size: 1.1rem; font-weight: 700; margin: 1.5rem 0 0.5rem; color: var(--color-text-primary); scroll-margin-top: 84px; }
+.prose h4 { font-size: 1rem; font-weight: 700; margin: 1.25rem 0 0.4rem; color: var(--color-text-secondary); }
+.prose p { margin: 0.75rem 0; }
+.prose a { color: var(--color-text-link); text-decoration: underline; text-underline-offset: 2px; }
+.prose a:hover { color: var(--color-text-link-hover); }
+.prose strong { color: var(--color-text-primary); font-weight: 700; }
+.prose ul, .prose ol { margin: 0.75rem 0; padding-left: 1.5rem; }
+.prose li { margin: 0.35rem 0; }
+.prose li::marker { color: var(--color-amber-500); }
+.prose code { font-family: var(--font-family-mono); font-size: 0.85em; background: var(--color-bg-surface); padding: 2px 6px; border-radius: var(--radius-sm); border: 1px solid var(--color-border-default); }
+.prose pre { background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-md); padding: 14px 16px; overflow-x: auto; }
+.prose pre code { background: none; border: 0; padding: 0; }
+.prose blockquote { margin: 1rem 0; padding: 0.5rem 1rem; border-left: 3px solid var(--color-amber-600); background: var(--color-bg-callout-info); border-radius: 0 var(--radius-md) var(--radius-md) 0; color: var(--color-text-secondary); }
+.prose hr { border: 0; border-top: 1px solid var(--color-border-default); margin: 1.75rem 0; }
+.prose img { max-width: 100%; height: auto; border-radius: var(--radius-md); margin: 1rem 0; border: 1px solid var(--color-border-default); }
+/* Tables — the big alignment fix */
+.prose table { width: 100%; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.875rem; }
+.prose th, .prose td { border: 1px solid var(--color-border-default); padding: 10px 12px; vertical-align: top; text-align: left; line-height: 1.55; }
+.prose thead th { background: var(--color-bg-surface); color: var(--color-text-primary); font-weight: 700; }
+.prose tbody tr:nth-child(even) { background: rgba(245, 158, 11, 0.03); }
+.prose tbody td:first-child { color: var(--color-text-primary); font-weight: 600; }
