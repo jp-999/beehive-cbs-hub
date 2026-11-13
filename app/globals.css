@@ -13,25 +13,25 @@
   --color-amber-800: #92400E;
   --color-amber-900: #78350F;
 
-  /* Dark backgrounds */
-  --color-bg-base: #0C0A08;
-  --color-bg-nav: #0F0D0A;
-  --color-bg-surface: #1A1509;
-  --color-bg-surface-hover: #231D0E;
-  --color-bg-icon-tile: #2A2010;
-  --color-bg-skeleton: #2A2010;
-  --color-bg-callout-info: #1F1A0C;
+  /* Dark backgrounds — lifted so cards, sections and tables separate clearly */
+  --color-bg-base: #0E0B06;
+  --color-bg-nav: #171108;
+  --color-bg-surface: #241C0E;
+  --color-bg-surface-hover: #302611;
+  --color-bg-icon-tile: #3A2E14;
+  --color-bg-skeleton: #3A2E14;
+  --color-bg-callout-info: #2A200E;
 
-  /* Text */
-  --color-text-primary: #F5EED6;
-  --color-text-secondary: #B8A878;
-  --color-text-muted: #7A6E50;
-  --color-text-inverted: #0C0A08;
-  --color-text-link: #FBBF24;
-  --color-text-link-hover: #F59E0B;
+  /* Text — brighter for readable contrast */
+  --color-text-primary: #FAF4E4;
+  --color-text-secondary: #D7C79C;
+  --color-text-muted: #A6956D;
+  --color-text-inverted: #0E0B06;
+  --color-text-link: #FCD34D;
+  --color-text-link-hover: #FBBF24;
 
-  /* Borders */
-  --color-border-default: #2E2518;
+  /* Borders — clearly visible warm lines (were nearly invisible before) */
+  --color-border-default: #574931;
   --color-border-active: #F59E0B;
   --color-border-focus: #F59E0B;
   --color-border-placeholder: #F59E0B;
