@@ -1,17 +1,20 @@
 {
   "meta": {
     "title": "Beehive CBs Hub",
-    "description": "Tout ce dont vous avez besoin pour Beehive : les consignes, la grille QC et les erreurs courantes."
+    "description": "Tout ce qu'il vous faut pour Beehive : les consignes, la grille QC et les erreurs courantes."
   },
-  "skipLink": { "label": "Aller au contenu principal" },
+  "skipLink": {
+    "label": "Aller au contenu principal"
+  },
   "nav": {
     "home": "Accueil",
     "onboarding": "Intégration",
     "materials": "Ressources",
     "commonErrors": "Erreurs courantes",
     "examples": "Exemples",
+    "troubleshooting": "Dépannage",
     "contact": "Contact",
-    "outlierCommunity": "Communauté Outlier"
+    "outlierCommunity": "Outlier Community"
   },
   "languageSwitcher": {
     "label": "Changer de langue (actuelle : {locale})",
@@ -22,7 +25,7 @@
   },
   "hero": {
     "title": "Beehive CBs Hub",
-    "intro": "Bonjour, je suis Buzz 🐝 — tout ce dont vous avez besoin pour Beehive est ici : les consignes dans votre langue, la grille QC, les erreurs courantes qui font renvoyer les tâches, et des exemples corrigés.",
+    "intro": "Bonjour, je suis Buzz 🐝 — vous trouverez ici tout ce qu'il vous faut pour Beehive : les consignes dans votre langue, la grille QC, les erreurs courantes qui font renvoyer les tâches et des exemples corrigés.",
     "ctaOnboarding": "Commencer l'intégration",
     "ctaMaterials": "Ouvrir les ressources",
     "ctaCommonErrors": "Erreurs courantes",
@@ -30,50 +33,79 @@
     "mascotAlt": "Buzz, la mascotte abeille"
   },
   "sections": {
-    "onboarding": { "title": "Intégration", "description": "Lisez votre ligne de tâche, faites la configuration et apprenez le processus de soumission." },
-    "materials": { "title": "Ressources", "description": "Les consignes Beehive complètes et la grille QC." },
-    "accounts": { "title": "Comptes et configuration", "description": "Création d'une nouvelle adresse e-mail, achat de Claude Max 5x + ChatGPT Plus, et configuration de votre compte démo." },
-    "common-errors": { "title": "Erreurs courantes", "description": "Présentation interactive des erreurs SxSxS — groupes À refaire et Erreurs de forme." },
-    "examples": { "title": "Exemples", "description": "Exemples corrigés par le QC avec satisfaction, problèmes, grille et adéquation au pays." },
-    "outlier-community": { "title": "Communauté Outlier", "description": "Rejoignez le canal Beehive pour les actualités, les mises à jour et la War Room." },
-    "contact": { "title": "Qui contacter", "description": "Trouvez vos QM, la War Room, le lien communautaire et le tableau de bord." }
+    "onboarding": {
+      "title": "Intégration",
+      "description": "Lisez votre ligne de tâche, terminez la configuration et apprenez le flux de soumission."
+    },
+    "materials": {
+      "title": "Ressources",
+      "description": "Les consignes Beehive complètes et la grille QC Spec."
+    },
+    "accounts": {
+      "title": "Comptes et configuration",
+      "description": "Création d'un nouvel e-mail, achat de Claude Max 5x + ChatGPT Plus et configuration de votre compte démo."
+    },
+    "common-errors": {
+      "title": "Erreurs courantes",
+      "description": "Présentation interactive des erreurs courantes SxSxS — groupes Redo et Form Error."
+    },
+    "examples": {
+      "title": "Exemples",
+      "description": "Exemples corrigés notés par la QC, avec satisfaction, issues, rubric et country fit."
+    },
+    "troubleshooting": {
+      "title": "Dépannage",
+      "description": "Solutions pour les comptes démo et les problèmes de paiement ou de carte bancaire."
+    },
+    "outlier-community": {
+      "title": "Outlier Community",
+      "description": "Rejoignez le canal Beehive pour les actualités, les mises à jour et la War Room."
+    },
+    "contact": {
+      "title": "Qui contacter",
+      "description": "Trouvez vos QM, la War Room, le lien de la communauté et le tableau de bord."
+    }
   },
-  "home": { "cardGridLabel": "Sections du hub" },
+  "home": {
+    "cardGridLabel": "Sections du hub"
+  },
   "onboarding": {
     "title": "Intégration",
-    "description": "Lire votre ligne de tâche, la configuration et le processus de soumission.",
+    "description": "Lecture de votre ligne de tâche, configuration et flux de soumission.",
     "comingSoon": "Les vidéos d'intégration apparaîtront ici. Revenez bientôt.",
     "breadcrumbHome": "Accueil",
     "breadcrumbSelf": "Intégration",
     "stageComingSoon": "Bientôt disponible.",
-    "videoComingSoon": "Lien vidéo bientôt disponible",
+    "videoComingSoon": "URL de la vidéo à venir",
     "videosLabel": "Vidéos d'intégration"
   },
   "materials": {
     "title": "Ressources",
-    "description": "Les consignes Beehive complètes et la grille QC.",
+    "description": "Les consignes Beehive complètes et la grille QC Spec.",
     "breadcrumbHome": "Accueil",
     "breadcrumbSelf": "Ressources",
-    "tocLabel": "Sommaire",
+    "tocLabel": "Contenu de la page",
     "jumpToSection": "Aller à la section",
-    "rubricLink": "Grille QC",
+    "rubricLink": "Grille QC Spec",
+    "memoryGuideLink": "Désactiver la mémoire",
+    "memoryGuideBreadcrumb": "Désactiver la mémoire",
     "stageComingSoon": "Bientôt disponible."
   },
   "rubric": {
-    "title": "Grille QC",
+    "title": "Grille QC Spec",
     "description": "Grille de sortie QC, avec recherche et filtres.",
     "breadcrumbHome": "Accueil",
     "breadcrumbMaterials": "Ressources",
-    "breadcrumbSelf": "Grille QC",
-    "searchLabel": "Rechercher dans les dimensions",
+    "breadcrumbSelf": "Grille QC Spec",
+    "searchLabel": "Rechercher des dimensions de la grille",
     "searchPlaceholder": "Rechercher des dimensions…",
     "filterLabel": "Filtrer par dimension",
     "allDimensions": "Toutes les dimensions",
     "showing": "Affichage de {shown} sur {total}",
     "noResults": "Aucune dimension ne correspond à votre recherche. Essayez un autre terme.",
-    "bandFail": "1–2 (Échec)",
-    "bandNonFail": "3–4 (Non-échec)",
-    "bandNoIssues": "5 (Aucun problème)",
+    "bandFail": "1–2 (Fail)",
+    "bandNonFail": "3–4 (Non-Fail)",
+    "bandNoIssues": "5 (No Issues)",
     "notApplicable": "Non applicable",
     "colDimension": "Dimension",
     "colSubDimension": "Sous-dimension",
@@ -85,47 +117,93 @@
   },
   "commonErrors": {
     "title": "Erreurs courantes",
-    "description": "Erreurs courantes SxSxS regroupées par type À refaire et Erreur de forme.",
+    "description": "Erreurs courantes SxSxS regroupées par type Redo et Form Error.",
     "breadcrumbHome": "Accueil",
     "breadcrumbSelf": "Erreurs courantes",
-    "redoGroup": "Erreurs à refaire",
+    "redoGroup": "Erreurs Redo",
     "redoDescription": "Erreurs qui obligent à refaire la tâche.",
-    "formGroup": "Erreurs de forme",
-    "formDescription": "Erreurs que le QC peut corriger, mais chacune compte contre la tâche.",
+    "formGroup": "Erreurs de formulaire",
+    "formDescription": "Erreurs que la QC peut corriger, mais chacune compte contre la tâche.",
     "divergence": {},
-    "slide13Note": "Les consignes font foi : cette diapositive liste les départages comme Adéquation au pays → Résultat → Expérience utilisateur. Les consignes Beehive §11 donnent l'ordre canonique : Résultat → Confiance → Effort et trajectoire → Communication, adéquation au pays et finition. Suivez les consignes.",
-    "slide13LinkText": "§11 Classer les trois modèles",
+    "slide13Note": "Les consignes font foi : cette diapositive indique l'ordre des départages comme Country fit → Outcome → User experience. Le §11 des consignes Beehive donne l'ordre canonique : Outcome → Trust → Effort & Trajectory → Communication, Country Fit & Polish. Suivez les consignes.",
+    "slide13LinkText": "§11 Classement des trois modèles",
     "slide13LinkHash": "11-ranking-the-three-models-changed",
+    "quickRefHeading": "Référence rapide",
+    "quiz": {
+      "heading": "Testez-vous",
+      "intro": "Un court test par étape, basé sur les renvois réels des Exemples. Choisissez une réponse pour voir pourquoi elle est correcte ou non.",
+      "score": "{correct} / {answered} correctes",
+      "reset": "Réinitialiser",
+      "correct": "Correct",
+      "wrong": "Pas tout à fait",
+      "seeExample": "Voir l'exemple"
+    },
     "stageComingSoon": "Bientôt disponible."
   },
   "examples": {
     "title": "Exemples",
-    "description": "Exemples corrigés par le QC, tirés des consignes Beehive.",
+    "description": "Tâches réelles anonymisées, examinées par la QC — des réussites nettes et un exemple de chaque échec courant.",
     "breadcrumbHome": "Accueil",
     "breadcrumbSelf": "Exemples",
+    "cleanPasses": "Réussites nettes — l'objectif à viser",
+    "cleanPassesNote": "Des tentatives qui correspondent à la QC sur chaque champ.",
+    "commonFailures": "Un exemple de chaque échec courant",
+    "commonFailuresNote": "Les renvois habituels, chacun avec ce que la QC a constaté.",
+    "whatQcFound": "Ce que la QC a constaté",
+    "whyExample": "Pourquoi c'est un exemple",
+    "whatHappened": "Ce qui s'est passé",
+    "whyItMatters": "Pourquoi c'est important",
+    "howToGetRight": "Comment bien faire",
+    "whatItDoesRight": "Ce qui est bien fait",
+    "howToReplicate": "Comment le reproduire",
+    "theRule": "La règle",
+    "mapsTo": "Correspond à",
+    "back": "← Tous les exemples",
     "tableHeading": "Modèle d'exemple",
     "comingSoon": "Les exemples corrigés sont en préparation.",
     "stageComingSoon": "Bientôt disponible."
   },
   "accounts": {
     "title": "Comptes et configuration",
-    "description": "Nouvelle adresse e-mail, Claude Max 5x, ChatGPT Plus et configuration du compte démo.",
+    "description": "Nouvel e-mail, Claude Max 5x, ChatGPT Plus et configuration du compte démo.",
     "breadcrumbHome": "Accueil",
     "breadcrumbSelf": "Comptes et configuration",
     "stageComingSoon": "Bientôt disponible."
   },
+  "troubleshooting": {
+    "title": "Dépannage",
+    "description": "Solutions aux blocages courants — votre compte démo et les problèmes de paiement ou de carte bancaire.",
+    "breadcrumbHome": "Accueil",
+    "breadcrumbSelf": "Dépannage",
+    "demo": {
+      "title": "Compte démo",
+      "body": "Vous n'arrivez pas à ouvrir, réclamer ou charger votre compte démo, ou il ne vous laisse pas démarrer la tâche."
+    },
+    "payment": {
+      "title": "Paiement et carte bancaire",
+      "body": "Votre carte a été refusée, la facturation affiche une erreur, ou vous devez ajouter ou modifier un moyen de paiement."
+    },
+    "helpTitle": "Toujours bloqué ? Obtenez de l'aide",
+    "helpBody": "L'équipe est disponible sur ces canaux — contactez-la avec une brève description et une capture d'écran :",
+    "warRoom": "Rejoindre la War Room (Google Meet)",
+    "dashboard": "Ouvrir votre tableau de bord",
+    "community": "Demander sur le canal Beehive (Outlier Community)",
+    "contactQMs": "Voir vos QM et leurs horaires"
+  },
   "contact": {
     "title": "Qui contacter",
-    "description": "Trouvez vos QM, la War Room et les liens communautaires.",
+    "description": "Trouvez vos QM, la War Room et les liens de la communauté.",
     "breadcrumbHome": "Accueil",
     "breadcrumbSelf": "Qui contacter",
     "yourQMs": "Vos QM",
-    "qmsBody": "Vos QM sont la même équipe sur Beehive — contactez-les dans la War Room, ou posez votre question dans le canal de la communauté Outlier.",
+    "qmsNote": "Contactez-les dans la War Room ou sur l'OC. Leurs horaires de travail indiquent quand attendre une réponse.",
+    "sendMessage": "Envoyer un message",
+    "qmsBody": "Vos QM forment la même équipe sur tout Beehive — contactez-les dans la War Room ou posez votre question sur le canal Outlier Community.",
     "warRoom": "War Room",
     "warRoomLink": "Rejoindre la War Room (Google Meet)",
     "dashboard": "Tableau de bord",
     "dashboardLink": "Ouvrir votre tableau de bord",
-    "community": "Communauté Outlier",
+    "community": "Outlier Community",
     "communityLink": "Ouvrir le canal Beehive",
     "stageComingSoon": "Bientôt disponible."
   },
@@ -133,12 +211,14 @@
     "label": "Espace réservé",
     "ariaLabel": "Ceci est un espace réservé — le contenu sera ajouté par l'équipe",
     "comingSoon": "Bientôt disponible",
-    "videoUrl": "Lien vidéo bientôt disponible",
-    "linkComingSoon": "Lien bientôt disponible",
-    "contactDetails": "Coordonnées bientôt disponibles",
+    "videoUrl": "URL de la vidéo à venir",
+    "linkComingSoon": "Lien à venir",
+    "contactDetails": "Coordonnées à venir",
     "mascotName": "Nom de la mascotte"
   },
-  "fallbackNotice": { "message": "Affiché en anglais — une traduction n'est pas encore disponible." },
+  "fallbackNotice": {
+    "message": "Affiché en anglais — une traduction n'est pas encore disponible."
+  },
   "footer": {
     "brand": "🐝 Beehive CBs Hub",
     "copyright": "© Beehive · Outlier AI",

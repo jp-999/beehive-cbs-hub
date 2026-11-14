@@ -1,17 +1,20 @@
 {
   "meta": {
     "title": "Beehive CBs Hub",
-    "description": "Beehive에 필요한 모든 것: 가이드라인, QC 루브릭, 흔한 오류."
+    "description": "Beehive에 필요한 모든 것: 가이드라인, QC 루브릭, 자주 발생하는 오류."
   },
-  "skipLink": { "label": "본문으로 건너뛰기" },
+  "skipLink": {
+    "label": "본문으로 건너뛰기"
+  },
   "nav": {
     "home": "홈",
     "onboarding": "온보딩",
     "materials": "자료",
-    "commonErrors": "흔한 오류",
+    "commonErrors": "자주 발생하는 오류",
     "examples": "예시",
-    "contact": "문의처",
-    "outlierCommunity": "Outlier 커뮤니티"
+    "troubleshooting": "문제 해결",
+    "contact": "문의",
+    "outlierCommunity": "Outlier Community"
   },
   "languageSwitcher": {
     "label": "언어 변경 (현재: {locale})",
@@ -22,89 +25,142 @@
   },
   "hero": {
     "title": "Beehive CBs Hub",
-    "intro": "안녕하세요, 저는 Buzz 🐝 예요 — Beehive에 필요한 모든 것이 여기 있어요: 여러분의 언어로 된 가이드라인, QC 루브릭, 작업이 반려되는 흔한 오류, 그리고 채점된 예시.",
-    "ctaOnboarding": "온보딩 시작",
+    "intro": "안녕하세요, 저는 Buzz 🐝 입니다. Beehive에 필요한 모든 것이 여기 있습니다. 여러분의 언어로 된 가이드라인, QC 루브릭, 작업이 반려되는 자주 발생하는 오류, 그리고 작업 예시입니다.",
+    "ctaOnboarding": "온보딩 시작하기",
     "ctaMaterials": "자료 열기",
-    "ctaCommonErrors": "흔한 오류",
+    "ctaCommonErrors": "자주 발생하는 오류",
     "ctaExamples": "예시 보기",
     "mascotAlt": "꿀벌 마스코트 Buzz"
   },
   "sections": {
-    "onboarding": { "title": "온보딩", "description": "작업 행을 읽고, 설정을 완료하고, 제출 흐름을 배웁니다." },
-    "materials": { "title": "자료", "description": "전체 Beehive 지침과 QC 루브릭." },
-    "accounts": { "title": "계정 및 설정", "description": "새 이메일 설정, Claude Max 5x + ChatGPT Plus 구매, 데모 계정 구성." },
-    "common-errors": { "title": "흔한 오류", "description": "인터랙티브 SxSxS 오류 자료 — ‘재작업’과 ‘형식 오류’ 그룹." },
-    "examples": { "title": "예시", "description": "만족도, 문제, 루브릭, 국가 적합성이 포함된 QC 채점 예시." },
-    "outlier-community": { "title": "Outlier 커뮤니티", "description": "소식, 업데이트, War Room을 위해 Beehive 채널에 참여하세요." },
-    "contact": { "title": "문의처", "description": "QM, War Room, 커뮤니티 링크, 대시보드를 찾아보세요." }
+    "onboarding": {
+      "title": "온보딩",
+      "description": "작업 행을 읽고, 설정을 완료하고, 제출 절차를 익히세요."
+    },
+    "materials": {
+      "title": "자료",
+      "description": "전체 Beehive 지침과 QC Spec 루브릭."
+    },
+    "accounts": {
+      "title": "계정 및 설정",
+      "description": "새 이메일 설정, Claude Max 5x + ChatGPT Plus 구매, 데모 계정 설정."
+    },
+    "common-errors": {
+      "title": "자주 발생하는 오류",
+      "description": "SxSxS 자주 발생하는 오류의 인터랙티브 자료 — Redo 및 Form Error 그룹."
+    },
+    "examples": {
+      "title": "예시",
+      "description": "QC가 채점한 작업 예시. satisfaction, issues, rubric, country fit 포함."
+    },
+    "troubleshooting": {
+      "title": "문제 해결",
+      "description": "데모 계정과 결제·신용카드 문제 해결 방법."
+    },
+    "outlier-community": {
+      "title": "Outlier Community",
+      "description": "뉴스, 업데이트, War Room을 위해 Beehive 채널에 참여하세요."
+    },
+    "contact": {
+      "title": "문의처",
+      "description": "담당 QM, War Room, 커뮤니티 링크, 대시보드를 찾아보세요."
+    }
   },
-  "home": { "cardGridLabel": "허브 섹션" },
+  "home": {
+    "cardGridLabel": "허브 섹션"
+  },
   "onboarding": {
     "title": "온보딩",
-    "description": "작업 행 읽기, 설정, 제출 흐름.",
-    "comingSoon": "온보딩 동영상이 여기에 표시됩니다. 곧 다시 확인하세요.",
+    "description": "작업 행 읽기, 설정, 제출 절차.",
+    "comingSoon": "온보딩 영상이 여기에 표시됩니다. 곧 다시 확인해 주세요.",
     "breadcrumbHome": "홈",
     "breadcrumbSelf": "온보딩",
     "stageComingSoon": "곧 제공됩니다.",
-    "videoComingSoon": "동영상 링크 곧 제공",
-    "videosLabel": "온보딩 동영상"
+    "videoComingSoon": "영상 URL 준비 중",
+    "videosLabel": "온보딩 영상"
   },
   "materials": {
     "title": "자료",
-    "description": "전체 Beehive 지침과 QC 루브릭.",
+    "description": "전체 Beehive 지침과 QC Spec 루브릭.",
     "breadcrumbHome": "홈",
     "breadcrumbSelf": "자료",
-    "tocLabel": "목차",
+    "tocLabel": "페이지 목차",
     "jumpToSection": "섹션으로 이동",
-    "rubricLink": "QC 루브릭",
+    "rubricLink": "QC Spec 루브릭",
+    "memoryGuideLink": "메모리 끄기",
+    "memoryGuideBreadcrumb": "메모리 끄기",
     "stageComingSoon": "곧 제공됩니다."
   },
   "rubric": {
-    "title": "QC 루브릭",
+    "title": "QC Spec 루브릭",
     "description": "검색 및 필터가 가능한 QC 출력 루브릭.",
     "breadcrumbHome": "홈",
     "breadcrumbMaterials": "자료",
-    "breadcrumbSelf": "QC 루브릭",
-    "searchLabel": "루브릭 차원 검색",
-    "searchPlaceholder": "차원 검색…",
-    "filterLabel": "차원으로 필터",
+    "breadcrumbSelf": "QC Spec 루브릭",
+    "searchLabel": "루브릭 항목 검색",
+    "searchPlaceholder": "항목 검색…",
+    "filterLabel": "차원으로 필터링",
     "allDimensions": "모든 차원",
     "showing": "{total}개 중 {shown}개 표시",
-    "noResults": "검색과 일치하는 차원이 없습니다. 다른 용어를 사용해 보세요.",
-    "bandFail": "1–2 (실패)",
-    "bandNonFail": "3–4 (비실패)",
-    "bandNoIssues": "5 (문제 없음)",
+    "noResults": "검색과 일치하는 차원이 없습니다. 다른 검색어를 사용해 보세요.",
+    "bandFail": "1–2 (Fail)",
+    "bandNonFail": "3–4 (Non-Fail)",
+    "bandNoIssues": "5 (No Issues)",
     "notApplicable": "해당 없음",
     "colDimension": "차원",
     "colSubDimension": "하위 차원",
-    "colNotes": "감사자 참고",
+    "colNotes": "감사자용 메모",
     "col1_2": "1–2",
     "col3_4": "3–4",
     "col5": "5",
     "stageComingSoon": "곧 제공됩니다."
   },
   "commonErrors": {
-    "title": "흔한 오류",
-    "description": "‘재작업’과 ‘형식 오류’ 유형으로 분류한 SxSxS 흔한 오류.",
+    "title": "자주 발생하는 오류",
+    "description": "Redo 및 Form Error 유형별로 묶은 SxSxS 자주 발생하는 오류.",
     "breadcrumbHome": "홈",
-    "breadcrumbSelf": "흔한 오류",
-    "redoGroup": "재작업 오류",
+    "breadcrumbSelf": "자주 발생하는 오류",
+    "redoGroup": "Redo 오류",
     "redoDescription": "작업을 다시 해야 하는 오류.",
-    "formGroup": "형식 오류",
-    "formDescription": "QC가 수정할 수 있지만 각각 작업에 감점으로 반영되는 오류.",
+    "formGroup": "양식 오류",
+    "formDescription": "QC가 수정할 수 있지만 각각 작업에 감점이 되는 오류.",
     "divergence": {},
-    "slide13Note": "지침이 기준입니다: 이 슬라이드는 동점 처리 순서를 국가 적합성 → 결과 → 사용자 경험으로 나열합니다. Beehive 지침 §11의 표준 순서는 결과 → 신뢰 → 노력 및 경로 → 커뮤니케이션·국가 적합성·완성도입니다. 지침을 따르세요.",
-    "slide13LinkText": "§11 세 모델 순위 매기기",
+    "slide13Note": "지침이 공식 기준입니다. 이 슬라이드는 타이브레이커를 Country fit → Outcome → User experience 순으로 표시하지만, Beehive 지침 §11의 공식 순서는 Outcome → Trust → Effort & Trajectory → Communication, Country Fit & Polish 입니다. 지침을 따르세요.",
+    "slide13LinkText": "§11 세 모델의 순위 매기기",
     "slide13LinkHash": "11-ranking-the-three-models-changed",
+    "quickRefHeading": "빠른 참조",
+    "quiz": {
+      "heading": "스스로 점검하기",
+      "intro": "각 단계별 짧은 자가 점검입니다. Examples의 실제 반려 사례를 바탕으로 합니다. 답을 선택하면 왜 맞고 틀린지 확인할 수 있습니다.",
+      "score": "{correct} / {answered} 정답",
+      "reset": "초기화",
+      "correct": "정답",
+      "wrong": "아쉬워요",
+      "seeExample": "예시 보기"
+    },
     "stageComingSoon": "곧 제공됩니다."
   },
   "examples": {
     "title": "예시",
-    "description": "Beehive 지침의 QC 채점 예시.",
+    "description": "QC가 검토한 실제 익명화 작업 — 깔끔한 합격과 자주 발생하는 실패 각 한 가지씩.",
     "breadcrumbHome": "홈",
     "breadcrumbSelf": "예시",
+    "cleanPasses": "깔끔한 합격 — 목표로 삼을 모습",
+    "cleanPassesNote": "모든 항목에서 QC와 일치한 시도.",
+    "commonFailures": "자주 발생하는 실패 각 한 가지씩",
+    "commonFailuresNote": "흔한 반려 사례. 각각 QC가 발견한 점 포함.",
+    "whatQcFound": "QC가 발견한 점",
+    "whyExample": "왜 좋은 예시인가",
+    "whatHappened": "무슨 일이 있었나",
+    "whyItMatters": "왜 중요한가",
+    "howToGetRight": "올바르게 하는 방법",
+    "whatItDoesRight": "잘한 점",
+    "howToReplicate": "재현하는 방법",
+    "theRule": "규칙",
+    "mapsTo": "해당 단계",
+    "back": "← 모든 예시",
     "tableHeading": "예시 템플릿",
-    "comingSoon": "채점된 예시를 준비 중입니다.",
+    "comingSoon": "작업 예시를 준비 중입니다.",
     "stageComingSoon": "곧 제공됩니다."
   },
   "accounts": {
@@ -114,40 +170,64 @@
     "breadcrumbSelf": "계정 및 설정",
     "stageComingSoon": "곧 제공됩니다."
   },
+  "troubleshooting": {
+    "title": "문제 해결",
+    "description": "자주 발생하는 장애 해결 방법 — 데모 계정과 결제·신용카드 문제.",
+    "breadcrumbHome": "홈",
+    "breadcrumbSelf": "문제 해결",
+    "demo": {
+      "title": "데모 계정",
+      "body": "데모 계정을 열거나, 받거나, 불러올 수 없거나 작업을 시작할 수 없는 경우."
+    },
+    "payment": {
+      "title": "결제 및 신용카드",
+      "body": "카드가 거절되었거나, 청구에 오류가 표시되거나, 결제 수단을 추가·변경해야 하는 경우."
+    },
+    "helpTitle": "여전히 막혔나요? 도움받기",
+    "helpBody": "팀은 지금 다음 채널에 있습니다. 간단한 설명과 스크린샷과 함께 문의하세요:",
+    "warRoom": "War Room 참여 (Google Meet)",
+    "dashboard": "대시보드 열기",
+    "community": "Beehive 채널에서 질문하기 (Outlier Community)",
+    "contactQMs": "담당 QM과 근무 시간 보기"
+  },
   "contact": {
     "title": "문의처",
-    "description": "QM, War Room, 커뮤니티 링크를 찾아보세요.",
+    "description": "담당 QM, War Room, 커뮤니티 링크를 찾아보세요.",
     "breadcrumbHome": "홈",
     "breadcrumbSelf": "문의처",
     "yourQMs": "담당 QM",
-    "qmsBody": "QM은 Beehive 전체에서 동일한 팀입니다 — War Room에서 연락하거나 Outlier 커뮤니티 채널에서 문의하세요.",
+    "qmsNote": "War Room 또는 OC에서 연락하세요. 근무 시간을 보면 답변 시점을 알 수 있습니다.",
+    "sendMessage": "메시지 보내기",
+    "qmsBody": "담당 QM은 Beehive 전체에서 동일한 팀입니다. War Room에서 연락하거나 Outlier Community 채널에서 질문하세요.",
     "warRoom": "War Room",
     "warRoomLink": "War Room 참여 (Google Meet)",
     "dashboard": "대시보드",
     "dashboardLink": "대시보드 열기",
-    "community": "Outlier 커뮤니티",
+    "community": "Outlier Community",
     "communityLink": "Beehive 채널 열기",
     "stageComingSoon": "곧 제공됩니다."
   },
   "placeholder": {
     "label": "자리표시자",
-    "ariaLabel": "자리표시자입니다 — 콘텐츠는 팀이 추가합니다",
-    "comingSoon": "곧 제공",
-    "videoUrl": "동영상 링크 곧 제공",
-    "linkComingSoon": "링크 곧 제공",
-    "contactDetails": "연락처 곧 제공",
+    "ariaLabel": "이것은 자리표시자입니다. 내용은 팀이 추가합니다.",
+    "comingSoon": "곧 제공됩니다",
+    "videoUrl": "영상 URL 준비 중",
+    "linkComingSoon": "링크 준비 중",
+    "contactDetails": "연락처 준비 중",
     "mascotName": "마스코트 이름"
   },
-  "fallbackNotice": { "message": "영어로 표시 중입니다 — 번역이 아직 제공되지 않습니다." },
+  "fallbackNotice": {
+    "message": "영어로 표시됩니다 — 아직 번역이 제공되지 않습니다."
+  },
   "footer": {
     "brand": "🐝 Beehive CBs Hub",
     "copyright": "© Beehive · Outlier AI",
     "languageHint": "여러 언어로 제공됩니다 — 위의 전환기를 사용하세요.",
-    "contactLink": "문의처"
+    "contactLink": "문의"
   },
   "notFound": {
-    "title": "페이지를 찾을 수 없음",
+    "title": "페이지를 찾을 수 없습니다",
     "description": "이 페이지는 존재하지 않거나 이동되었습니다.",
-    "goHome": "홈으로"
+    "goHome": "홈으로 가기"
   }
 }

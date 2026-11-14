@@ -1,79 +1,111 @@
 {
   "meta": {
     "title": "Beehive CBs Hub",
-    "description": "Beehive に必要なものすべて：ガイドライン、QC ルーブリック、よくあるエラー。"
+    "description": "Beehive に必要なものがすべて揃っています。ガイドライン、QC ルーブリック、よくある誤り。"
   },
-  "skipLink": { "label": "メインコンテンツへスキップ" },
+  "skipLink": {
+    "label": "メインコンテンツへスキップ"
+  },
   "nav": {
     "home": "ホーム",
     "onboarding": "オンボーディング",
     "materials": "資料",
-    "commonErrors": "よくあるエラー",
-    "examples": "実例",
+    "commonErrors": "よくある誤り",
+    "examples": "例",
+    "troubleshooting": "トラブルシューティング",
     "contact": "連絡先",
-    "outlierCommunity": "Outlier コミュニティ"
+    "outlierCommunity": "Outlier Community"
   },
   "languageSwitcher": {
-    "label": "言語を切り替える（現在：{locale}）",
+    "label": "言語を切り替える（現在: {locale}）",
     "trigger": "言語を切り替える",
-    "heading": "言語を選択",
+    "heading": "言語を選択してください",
     "openMenu": "言語メニューを開く",
     "closeMenu": "言語メニューを閉じる"
   },
   "hero": {
     "title": "Beehive CBs Hub",
-    "intro": "こんにちは、Buzz 🐝 です。Beehive に必要なものはすべてここにあります：あなたの言語のガイドライン、QC ルーブリック、タスクが差し戻される原因となるよくあるエラー、そして採点済みの実例。",
+    "intro": "こんにちは、Buzz 🐝 です。Beehive に必要なものはすべてここにあります。あなたの言語のガイドライン、QC ルーブリック、タスクが差し戻される原因となるよくある誤り、そして実例です。",
     "ctaOnboarding": "オンボーディングを始める",
     "ctaMaterials": "資料を開く",
-    "ctaCommonErrors": "よくあるエラー",
-    "ctaExamples": "実例を見る",
+    "ctaCommonErrors": "よくある誤り",
+    "ctaExamples": "例を見る",
     "mascotAlt": "ミツバチのマスコット Buzz"
   },
   "sections": {
-    "onboarding": { "title": "オンボーディング", "description": "タスク行を読み、セットアップを完了し、提出の流れを学びます。" },
-    "materials": { "title": "資料", "description": "Beehive の完全なインストラクションと QC ルーブリック。" },
-    "accounts": { "title": "アカウントとセットアップ", "description": "新しいメールの作成、Claude Max 5x と ChatGPT Plus の購入、デモアカウントの設定。" },
-    "common-errors": { "title": "よくあるエラー", "description": "インタラクティブな SxSxS エラー集 — 「やり直し」と「フォームエラー」のグループ。" },
-    "examples": { "title": "実例", "description": "満足度、問題点、ルーブリック、国適合性を含む QC 採点済みの実例。" },
-    "outlier-community": { "title": "Outlier コミュニティ", "description": "ニュース、アップデート、War Room のために Beehive チャンネルに参加。" },
-    "contact": { "title": "連絡先", "description": "QM、War Room、コミュニティのリンク、ダッシュボードを見つけましょう。" }
+    "onboarding": {
+      "title": "オンボーディング",
+      "description": "タスク行を読み、セットアップを完了し、提出の流れを学びましょう。"
+    },
+    "materials": {
+      "title": "資料",
+      "description": "Beehive の完全な手順書と QC Spec ルーブリック。"
+    },
+    "accounts": {
+      "title": "アカウントとセットアップ",
+      "description": "新しいメールの設定、Claude Max 5x と ChatGPT Plus の購入、デモアカウントの設定。"
+    },
+    "common-errors": {
+      "title": "よくある誤り",
+      "description": "SxSxS のよくある誤りのインタラクティブな資料 — Redo と Form Error のグループ。"
+    },
+    "examples": {
+      "title": "例",
+      "description": "QC が採点した実例。satisfaction、issues、rubric、country fit 付き。"
+    },
+    "troubleshooting": {
+      "title": "トラブルシューティング",
+      "description": "デモアカウントや、支払い・クレジットカードの問題の解決方法。"
+    },
+    "outlier-community": {
+      "title": "Outlier Community",
+      "description": "ニュース、更新、War Room のために Beehive チャンネルに参加しましょう。"
+    },
+    "contact": {
+      "title": "連絡先",
+      "description": "担当 QM、War Room、コミュニティのリンク、ダッシュボードを見つけましょう。"
+    }
   },
-  "home": { "cardGridLabel": "ハブのセクション" },
+  "home": {
+    "cardGridLabel": "ハブのセクション"
+  },
   "onboarding": {
     "title": "オンボーディング",
     "description": "タスク行の読み方、セットアップ、提出の流れ。",
-    "comingSoon": "オンボーディング動画はここに表示されます。また後で確認してください。",
+    "comingSoon": "オンボーディング動画はここに表示されます。近日公開。",
     "breadcrumbHome": "ホーム",
     "breadcrumbSelf": "オンボーディング",
     "stageComingSoon": "近日公開。",
-    "videoComingSoon": "動画リンクは近日公開",
+    "videoComingSoon": "動画 URL は近日公開",
     "videosLabel": "オンボーディング動画"
   },
   "materials": {
     "title": "資料",
-    "description": "Beehive の完全なインストラクションと QC ルーブリック。",
+    "description": "Beehive の完全な手順書と QC Spec ルーブリック。",
     "breadcrumbHome": "ホーム",
     "breadcrumbSelf": "資料",
-    "tocLabel": "目次",
+    "tocLabel": "ページの目次",
     "jumpToSection": "セクションへ移動",
-    "rubricLink": "QC ルーブリック",
+    "rubricLink": "QC Spec ルーブリック",
+    "memoryGuideLink": "メモリをオフにする",
+    "memoryGuideBreadcrumb": "メモリをオフにする",
     "stageComingSoon": "近日公開。"
   },
   "rubric": {
-    "title": "QC ルーブリック",
-    "description": "検索・フィルタ可能な QC 出力ルーブリック。",
+    "title": "QC Spec ルーブリック",
+    "description": "検索・絞り込み可能な QC 出力ルーブリック。",
     "breadcrumbHome": "ホーム",
     "breadcrumbMaterials": "資料",
-    "breadcrumbSelf": "QC ルーブリック",
-    "searchLabel": "ルーブリックのディメンションを検索",
-    "searchPlaceholder": "ディメンションを検索…",
+    "breadcrumbSelf": "QC Spec ルーブリック",
+    "searchLabel": "ルーブリックの項目を検索",
+    "searchPlaceholder": "項目を検索…",
     "filterLabel": "ディメンションで絞り込む",
     "allDimensions": "すべてのディメンション",
     "showing": "{total} 件中 {shown} 件を表示",
-    "noResults": "検索に一致するディメンションがありません。別の語句をお試しください。",
-    "bandFail": "1–2（不合格）",
-    "bandNonFail": "3–4（準合格）",
-    "bandNoIssues": "5（問題なし）",
+    "noResults": "検索に一致するディメンションはありません。別の語句をお試しください。",
+    "bandFail": "1–2 (Fail)",
+    "bandNonFail": "3–4 (Non-Fail)",
+    "bandNoIssues": "5 (No Issues)",
     "notApplicable": "該当なし",
     "colDimension": "ディメンション",
     "colSubDimension": "サブディメンション",
@@ -84,70 +116,118 @@
     "stageComingSoon": "近日公開。"
   },
   "commonErrors": {
-    "title": "よくあるエラー",
-    "description": "「やり直し」と「フォームエラー」の種類別にまとめた SxSxS のよくあるエラー。",
+    "title": "よくある誤り",
+    "description": "Redo と Form Error のタイプ別にまとめた SxSxS のよくある誤り。",
     "breadcrumbHome": "ホーム",
-    "breadcrumbSelf": "よくあるエラー",
-    "redoGroup": "やり直しエラー",
-    "redoDescription": "タスクのやり直しが必要になるエラー。",
+    "breadcrumbSelf": "よくある誤り",
+    "redoGroup": "Redo エラー",
+    "redoDescription": "タスクのやり直しが必要なエラー。",
     "formGroup": "フォームエラー",
-    "formDescription": "QC が修正できるものの、1 件ごとにタスクの減点対象となるエラー。",
+    "formDescription": "QC が修正できますが、それぞれタスクの減点になるエラー。",
     "divergence": {},
-    "slide13Note": "インストラクションが正。このスライドではタイブレークを「国適合性 → 成果 → ユーザー体験」と記載しています。Beehive インストラクション §11 の正式な順序は「成果 → 信頼性 → 労力と軌跡 → コミュニケーション・国適合性・仕上がり」です。インストラクションに従ってください。",
-    "slide13LinkText": "§11 3 つのモデルをランク付けする",
+    "slide13Note": "手順書が正式な基準です。このスライドではタイブレーカーを Country fit → Outcome → User experience の順で示していますが、Beehive 手順書 §11 の正式な順序は Outcome → Trust → Effort & Trajectory → Communication, Country Fit & Polish です。手順書に従ってください。",
+    "slide13LinkText": "§11 3つのモデルのランキング",
     "slide13LinkHash": "11-ranking-the-three-models-changed",
+    "quickRefHeading": "クイックリファレンス",
+    "quiz": {
+      "heading": "理解度チェック",
+      "intro": "各ステージの短い確認テストです。Examples の実際の差し戻しをもとにしています。回答を選ぶと、なぜ正しい／誤りなのかが表示されます。",
+      "score": "{correct} / {answered} 正解",
+      "reset": "リセット",
+      "correct": "正解",
+      "wrong": "惜しい",
+      "seeExample": "例を見る"
+    },
     "stageComingSoon": "近日公開。"
   },
   "examples": {
-    "title": "実例",
-    "description": "Beehive インストラクションからの QC 採点済みの実例。",
+    "title": "例",
+    "description": "QC がレビューした実際の匿名化タスク — きれいな合格と、よくある失敗の各一例。",
     "breadcrumbHome": "ホーム",
-    "breadcrumbSelf": "実例",
-    "tableHeading": "実例テンプレート",
-    "comingSoon": "採点済みの実例を準備中です。",
+    "breadcrumbSelf": "例",
+    "cleanPasses": "きれいな合格 — 目指すべき形",
+    "cleanPassesNote": "すべての項目で QC と一致した試行。",
+    "commonFailures": "よくある失敗の各一例",
+    "commonFailuresNote": "よくある差し戻し。それぞれ QC が見つけた点付き。",
+    "whatQcFound": "QC が見つけた点",
+    "whyExample": "なぜ良い例なのか",
+    "whatHappened": "何が起きたか",
+    "whyItMatters": "なぜ重要か",
+    "howToGetRight": "正しく行う方法",
+    "whatItDoesRight": "良かった点",
+    "howToReplicate": "再現する方法",
+    "theRule": "ルール",
+    "mapsTo": "対応するステージ",
+    "back": "← すべての例",
+    "tableHeading": "例のテンプレート",
+    "comingSoon": "実例を準備中です。",
     "stageComingSoon": "近日公開。"
   },
   "accounts": {
     "title": "アカウントとセットアップ",
-    "description": "新しいメール、Claude Max 5x、ChatGPT Plus、デモアカウントの設定。",
+    "description": "新しいメール、Claude Max 5x、ChatGPT Plus、デモアカウントのセットアップ。",
     "breadcrumbHome": "ホーム",
     "breadcrumbSelf": "アカウントとセットアップ",
     "stageComingSoon": "近日公開。"
   },
+  "troubleshooting": {
+    "title": "トラブルシューティング",
+    "description": "よくある障害の解決方法 — デモアカウントと、支払い・クレジットカードの問題。",
+    "breadcrumbHome": "ホーム",
+    "breadcrumbSelf": "トラブルシューティング",
+    "demo": {
+      "title": "デモアカウント",
+      "body": "デモアカウントを開けない・取得できない・読み込めない、またはタスクを開始できない場合。"
+    },
+    "payment": {
+      "title": "支払いとクレジットカード",
+      "body": "カードが拒否された、請求にエラーが表示される、または支払い方法の追加・変更が必要な場合。"
+    },
+    "helpTitle": "まだ解決しませんか？ サポートを受ける",
+    "helpBody": "チームは現在これらのチャンネルにいます。簡単な説明とスクリーンショットを添えて連絡してください:",
+    "warRoom": "War Room に参加（Google Meet）",
+    "dashboard": "ダッシュボードを開く",
+    "community": "Beehive チャンネルで質問する（Outlier Community）",
+    "contactQMs": "担当 QM と対応時間を見る"
+  },
   "contact": {
     "title": "連絡先",
-    "description": "QM、War Room、コミュニティのリンクを見つけましょう。",
+    "description": "担当 QM、War Room、コミュニティのリンクを見つけましょう。",
     "breadcrumbHome": "ホーム",
     "breadcrumbSelf": "連絡先",
-    "yourQMs": "あなたの QM",
-    "qmsBody": "QM は Beehive 全体で同じチームです。War Room で連絡するか、Outlier コミュニティチャンネルで質問してください。",
+    "yourQMs": "担当 QM",
+    "qmsNote": "War Room または OC で連絡できます。対応時間を見れば、返信の目安がわかります。",
+    "sendMessage": "メッセージを送る",
+    "qmsBody": "担当 QM は Beehive 全体で同じチームです。War Room で連絡するか、Outlier Community チャンネルで質問してください。",
     "warRoom": "War Room",
     "warRoomLink": "War Room に参加（Google Meet）",
     "dashboard": "ダッシュボード",
     "dashboardLink": "ダッシュボードを開く",
-    "community": "Outlier コミュニティ",
+    "community": "Outlier Community",
     "communityLink": "Beehive チャンネルを開く",
     "stageComingSoon": "近日公開。"
   },
   "placeholder": {
     "label": "プレースホルダー",
-    "ariaLabel": "これはプレースホルダーです — コンテンツはチームが追加します",
+    "ariaLabel": "これはプレースホルダーです。内容はチームが追加します。",
     "comingSoon": "近日公開",
-    "videoUrl": "動画リンクは近日公開",
+    "videoUrl": "動画 URL は近日公開",
     "linkComingSoon": "リンクは近日公開",
     "contactDetails": "連絡先は近日公開",
-    "mascotName": "マスコットの名前"
+    "mascotName": "マスコット名"
   },
-  "fallbackNotice": { "message": "英語で表示しています — 翻訳はまだ利用できません。" },
+  "fallbackNotice": {
+    "message": "英語で表示しています。翻訳はまだ利用できません。"
+  },
   "footer": {
     "brand": "🐝 Beehive CBs Hub",
     "copyright": "© Beehive · Outlier AI",
-    "languageHint": "複数の言語でご利用いただけます — 上の切り替えを使用してください。",
+    "languageHint": "複数の言語で利用できます。上の切り替えをご利用ください。",
     "contactLink": "連絡先"
   },
   "notFound": {
     "title": "ページが見つかりません",
     "description": "このページは存在しないか、移動されました。",
-    "goHome": "ホームへ"
+    "goHome": "ホームへ移動"
   }
 }

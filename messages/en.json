@@ -55,7 +55,7 @@
     },
     "troubleshooting": {
       "title": "Troubleshooting",
-      "description": "Fixes for demo accounts, payments, and claiming or activating your courses."
+      "description": "Fixes for demo accounts and payment or credit-card issues."
     },
     "outlier-community": {
       "title": "Outlier Community",
@@ -172,7 +172,7 @@
   },
   "troubleshooting": {
     "title": "Troubleshooting",
-    "description": "Fixes for the common blockers — your demo account, payments, and claiming or activating your courses.",
+    "description": "Fixes for the common blockers — your demo account and payment or credit-card issues.",
     "breadcrumbHome": "Home",
     "breadcrumbSelf": "Troubleshooting",
     "demo": {
@@ -183,10 +183,6 @@
     "payment": {
       "title": "Payment & credit card",
       "body": "Your card was declined, billing shows an error, or you need to add or change a payment method."
-    },
-    "courses": {
-      "title": "Courses: claim & activate",
-      "body": "How to claim the Beehive courses and activate them before you pick up tasks."
     },
     "helpTitle": "Still stuck? Get help",
     "helpBody": "The team is in these channels now — reach out with a short description and a screenshot:",

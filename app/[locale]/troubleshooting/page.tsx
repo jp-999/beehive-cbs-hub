@@ -38,7 +38,6 @@ export default async function TroubleshootingPage({
       cta: demoAccountClaim.status === 'ready' ? { href: demoAccountClaim.value, label: t('demo.cta') } : undefined,
     },
     { icon: '💳', title: t('payment.title'), body: t('payment.body') },
-    { icon: '🎓', title: t('courses.title'), body: t('courses.body') },
   ];
 
   return (
