@@ -49,7 +49,7 @@ export default async function CommonErrorsPage({
     <>
       {t('slide13Note')}{' '}
       <Link
-        href={`/materials/qc-spec#${t('slide13LinkHash')}` as `/${string}`}
+        href={`/materials#${t('slide13LinkHash')}` as `/${string}`}
         style={{ color: 'var(--color-amber-400)', fontWeight: 600 }}
       >
         {t('slide13LinkText')}
