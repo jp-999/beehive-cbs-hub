@@ -1,10 +1,14 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import { notFound } from 'next/navigation';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
 import { siteConfig } from '@/site.config';
+import { renderFull } from '@/lib/content/markdown';
 import PageHeader from '@/components/PageHeader';
+import Prose from '@/components/Prose';
 
 const cardStyle: React.CSSProperties = {
   background: 'var(--color-bg-surface)',
@@ -17,6 +21,24 @@ const cardStyle: React.CSSProperties = {
 
 const linkStyle: React.CSSProperties = { color: 'var(--color-amber-400)', fontWeight: 600 };
 
+function getBody(locale: string): string {
+  const paths =
+    locale !== 'en'
+      ? [
+          path.join(process.cwd(), 'content', 'translations', locale, 'troubleshooting.md'),
+          path.join(process.cwd(), 'content', 'source', 'troubleshooting.md'),
+        ]
+      : [path.join(process.cwd(), 'content', 'source', 'troubleshooting.md')];
+  for (const p of paths) {
+    try {
+      if (fs.existsSync(p)) return renderFull(fs.readFileSync(p, 'utf8'));
+    } catch {
+      /* try next candidate */
+    }
+  }
+  return '';
+}
+
 export default async function TroubleshootingPage({
   params,
 }: {
@@ -28,17 +50,8 @@ export default async function TroubleshootingPage({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: 'troubleshooting' });
+  const body = getBody(locale);
   const { warRoom, dashboard, outlierCommunity, demoAccountClaim } = siteConfig.links;
-
-  const topics = [
-    {
-      icon: '🧪',
-      title: t('demo.title'),
-      body: t('demo.body'),
-      cta: demoAccountClaim.status === 'ready' ? { href: demoAccountClaim.value, label: t('demo.cta') } : undefined,
-    },
-    { icon: '💳', title: t('payment.title'), body: t('payment.body') },
-  ];
 
   return (
     <>
@@ -52,31 +65,28 @@ export default async function TroubleshootingPage({
       />
 
       <div style={{ paddingBottom: '48px', maxWidth: '820px' }}>
-        {topics.map((topic) => (
-          <section key={topic.title} style={cardStyle}>
-            <h2 style={{ margin: '0 0 8px', fontSize: '1.15rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>
-              <span aria-hidden="true" style={{ marginRight: '8px' }}>{topic.icon}</span>
-              {topic.title}
-            </h2>
-            <p style={{ margin: 0, color: 'var(--color-text-secondary)', lineHeight: 1.6, fontSize: '0.95rem' }}>{topic.body}</p>
-            {topic.cta && (
-              <p style={{ margin: '14px 0 0' }}>
-                <a
-                  href={topic.cta.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-block', background: 'var(--color-amber-500)', color: '#1A1205',
-                    fontWeight: 700, fontSize: '0.875rem', padding: '8px 16px',
-                    borderRadius: 'var(--radius-md)', textDecoration: 'none',
-                  }}
-                >
-                  {topic.cta.label} <span aria-hidden="true">↗</span>
-                </a>
-              </p>
-            )}
-          </section>
-        ))}
+        {demoAccountClaim.status === 'ready' && (
+          <p style={{ margin: '0 0 24px' }}>
+            <a
+              href={demoAccountClaim.value}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-block', background: 'var(--color-amber-500)', color: '#1A1205',
+                fontWeight: 700, fontSize: '0.875rem', padding: '9px 18px',
+                borderRadius: 'var(--radius-md)', textDecoration: 'none',
+              }}
+            >
+              {t('demo.cta')} <span aria-hidden="true">↗</span>
+            </a>
+          </p>
+        )}
+
+        {body && (
+          <article>
+            <Prose html={body} />
+          </article>
+        )}
 
         {/* Still stuck? — all live channels */}
         <section style={{ ...cardStyle, marginTop: '32px', border: '1px solid var(--color-amber-700)' }}>
