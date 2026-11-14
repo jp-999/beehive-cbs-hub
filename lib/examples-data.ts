@@ -2,7 +2,7 @@
 // Per the source's own rule, NO task IDs, attempt IDs, share links, emails or
 // personal data are stored here — only the lesson, the QC finding and the stage.
 
-export type ExampleGroup = 'pass' | 'fail';
+export type ExampleGroup = 'reference' | 'pass' | 'fail';
 
 export interface ExampleItem {
   slug: string;
@@ -13,9 +13,23 @@ export interface ExampleItem {
   errorCode?: string; // fails: "#11" etc.
   finding: string; // what QC found / why it's an example
   stage: string; // maps to a stage in the Common Errors quick reference
+  detail?: boolean; // true when a rich walkthrough exists at content/examples/<slug>.md
 }
 
 export const EXAMPLES: ExampleItem[] = [
+  // ── Reference: full task anatomy ────────────────────────────────
+  {
+    slug: 'atelier-grataloup',
+    group: 'reference',
+    title: 'Anatomy of a perfect task (5/5)',
+    locale: 'fr-FR · reference',
+    result: 'PASS 5',
+    finding:
+      'A finished, correct item laid out section by section — universe, opening prompt, input artifacts, target outcome, the simplified run, the 28-criterion weighted rubric, the golden answer, and known-vs-not-known — with notes on what makes each part strong. The bar for what good looks like.',
+    stage: 'Reference',
+    detail: true,
+  },
+
   // ── Clean passes ────────────────────────────────────────────────
   {
     slug: 'fixed-resubmission',
