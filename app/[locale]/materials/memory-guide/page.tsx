@@ -11,13 +11,22 @@ import Prose from '@/components/Prose';
 
 export const metadata: Metadata = { title: 'Turn off memory · Beehive materials' };
 
-function getGuide(): string {
-  try {
-    const p = path.join(process.cwd(), 'content', 'source', 'memory-guide.md');
-    return renderFull(fs.readFileSync(p, 'utf8'));
-  } catch {
-    return '';
+function getGuide(locale: string): string {
+  const paths =
+    locale !== 'en'
+      ? [
+          path.join(process.cwd(), 'content', 'translations', locale, 'memory-guide.md'),
+          path.join(process.cwd(), 'content', 'source', 'memory-guide.md'),
+        ]
+      : [path.join(process.cwd(), 'content', 'source', 'memory-guide.md')];
+  for (const p of paths) {
+    try {
+      if (fs.existsSync(p)) return renderFull(fs.readFileSync(p, 'utf8'));
+    } catch {
+      /* try next candidate */
+    }
   }
+  return '';
 }
 
 export default async function MemoryGuidePage({
@@ -31,7 +40,7 @@ export default async function MemoryGuidePage({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: 'materials' });
-  const html = getGuide();
+  const html = getGuide(locale);
 
   return (
     <>

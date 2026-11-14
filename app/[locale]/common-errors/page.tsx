@@ -20,13 +20,22 @@ const slideHeadingStyle: React.CSSProperties = {
   margin: '0 0 8px',
 };
 
-function getQuickRef(): string {
-  try {
-    const p = path.join(process.cwd(), 'content', 'source', 'common-errors-quickref.md');
-    return renderFull(fs.readFileSync(p, 'utf8'));
-  } catch {
-    return '';
+function getQuickRef(locale: string): string {
+  const paths =
+    locale !== 'en'
+      ? [
+          path.join(process.cwd(), 'content', 'translations', locale, 'common-errors-quickref.md'),
+          path.join(process.cwd(), 'content', 'source', 'common-errors-quickref.md'),
+        ]
+      : [path.join(process.cwd(), 'content', 'source', 'common-errors-quickref.md')];
+  for (const p of paths) {
+    try {
+      if (fs.existsSync(p)) return renderFull(fs.readFileSync(p, 'utf8'));
+    } catch {
+      /* try next candidate */
+    }
   }
+  return '';
 }
 
 export default async function CommonErrorsPage({
@@ -41,7 +50,7 @@ export default async function CommonErrorsPage({
 
   const t = await getTranslations({ locale, namespace: 'commonErrors' });
   const errors = await getCommonErrors(locale);
-  const quickRefHtml = getQuickRef();
+  const quickRefHtml = getQuickRef(locale);
 
   // Divergence note for slide 13: the deck lists Country fit as tie-breaker 1,
   // but the Instructions are canonical. Link straight to §11 in the QC spec.

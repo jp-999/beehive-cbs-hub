@@ -27,14 +27,22 @@ export async function generateMetadata({
   return { title: e ? `${e.title} · Beehive examples` : 'Beehive examples' };
 }
 
-function getRichDoc(slug: string): string | null {
-  try {
-    const p = path.join(process.cwd(), 'content', 'examples', `${slug}.md`);
-    if (!fs.existsSync(p)) return null;
-    return renderFull(fs.readFileSync(p, 'utf8'));
-  } catch {
-    return null;
+function getRichDoc(slug: string, locale: string): string | null {
+  const paths =
+    locale !== 'en'
+      ? [
+          path.join(process.cwd(), 'content', 'translations', locale, 'examples', `${slug}.md`),
+          path.join(process.cwd(), 'content', 'examples', `${slug}.md`),
+        ]
+      : [path.join(process.cwd(), 'content', 'examples', `${slug}.md`)];
+  for (const p of paths) {
+    try {
+      if (fs.existsSync(p)) return renderFull(fs.readFileSync(p, 'utf8'));
+    } catch {
+      /* try next candidate */
+    }
   }
+  return null;
 }
 
 function badge(tone: 'red' | 'green' | 'muted'): React.CSSProperties {
@@ -66,7 +74,7 @@ export default async function ExampleDetailPage({
   if (!example) notFound();
 
   const t = await getTranslations({ locale, namespace: 'examples' });
-  const rich = example.detail ? getRichDoc(slug) : null;
+  const rich = example.detail ? getRichDoc(slug, locale) : null;
   const isPass = example.group !== 'fail';
 
   // Rich walkthrough (full task anatomy) when a task file exists
