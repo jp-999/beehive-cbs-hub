@@ -1,12 +1,17 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import { notFound } from 'next/navigation';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import { Link } from '@/i18n/navigation';
 import { getCommonErrors } from '@/lib/content/common-errors';
+import { renderFull } from '@/lib/content/markdown';
 import PageHeader from '@/components/PageHeader';
 import Prose from '@/components/Prose';
 import ErrorAccordion from '@/components/ErrorAccordion';
 import FallbackNotice from '@/components/FallbackNotice';
+import CommonErrorsQuiz from '@/components/CommonErrorsQuiz';
 
 const slideHeadingStyle: React.CSSProperties = {
   fontSize: '1.25rem',
@@ -14,6 +19,15 @@ const slideHeadingStyle: React.CSSProperties = {
   color: 'var(--color-text-primary)',
   margin: '0 0 8px',
 };
+
+function getQuickRef(): string {
+  try {
+    const p = path.join(process.cwd(), 'content', 'source', 'common-errors-quickref.md');
+    return renderFull(fs.readFileSync(p, 'utf8'));
+  } catch {
+    return '';
+  }
+}
 
 export default async function CommonErrorsPage({
   params,
@@ -27,16 +41,22 @@ export default async function CommonErrorsPage({
 
   const t = await getTranslations({ locale, namespace: 'commonErrors' });
   const errors = await getCommonErrors(locale);
+  const quickRefHtml = getQuickRef();
 
-  // Divergence note for slide 13 (tie-breaker order)
-  let slide13Note: string | undefined;
-  try {
-    // Only include if the key exists in messages (check via try)
-    slide13Note = t('divergence.slide13' as Parameters<typeof t>[0]);
-  } catch {
-    slide13Note = undefined;
-  }
-  const notes = slide13Note ? { 13: slide13Note } : {};
+  // Divergence note for slide 13: the deck lists Country fit as tie-breaker 1,
+  // but the Instructions are canonical. Link straight to §11 in the QC spec.
+  const slide13Note = (
+    <>
+      {t('slide13Note')}{' '}
+      <Link
+        href={`/materials/qc-spec#${t('slide13LinkHash')}` as `/${string}`}
+        style={{ color: 'var(--color-amber-400)', fontWeight: 600 }}
+      >
+        {t('slide13LinkText')}
+      </Link>
+    </>
+  );
+  const notes: Partial<Record<number, React.ReactNode>> = { 13: slide13Note };
 
   return (
     <>
@@ -51,9 +71,21 @@ export default async function CommonErrorsPage({
 
       <FallbackNotice show={errors.isFallback} />
 
+      {/* Quick reference — scan this before the detailed slides */}
+      {quickRefHtml && (
+        <section aria-labelledby="quickref-heading" style={{ marginBottom: '40px' }}>
+          <h2 id="quickref-heading" style={{ fontSize: '1.4rem', fontWeight: 800, color: 'var(--color-text-primary)', margin: '0 0 14px' }}>
+            {t('quickRefHeading')}
+          </h2>
+          <div className="doc-card">
+            <Prose html={quickRefHtml} />
+          </div>
+        </section>
+      )}
+
       <div
         lang={errors.isFallback ? 'en' : undefined}
-        style={{ paddingBottom: '48px' }}
+        style={{ paddingBottom: '8px' }}
       >
         {/* Source note */}
         {errors.sourceNote && (
@@ -107,6 +139,17 @@ export default async function CommonErrorsPage({
           </section>
         ))}
       </div>
+
+      {/* Self-check quiz */}
+      <CommonErrorsQuiz
+        heading={t('quiz.heading')}
+        intro={t('quiz.intro')}
+        scoreLabel={t('quiz.score')}
+        resetLabel={t('quiz.reset')}
+        correctLabel={t('quiz.correct')}
+        wrongLabel={t('quiz.wrong')}
+        exampleLabel={t('quiz.seeExample')}
+      />
     </>
   );
 }

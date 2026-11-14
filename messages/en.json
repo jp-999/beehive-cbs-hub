@@ -121,6 +121,16 @@
     "slide13Note": "Instructions are canonical: this slide lists tie-breakers as Country fit → Outcome → User experience. Beehive Instructions §11 give the canonical order: Outcome → Trust → Effort & Trajectory → Communication, Country Fit & Polish. Follow the Instructions.",
     "slide13LinkText": "§11 Ranking the three models",
     "slide13LinkHash": "11-ranking-the-three-models-changed",
+    "quickRefHeading": "Quick reference",
+    "quiz": {
+      "heading": "Check yourself",
+      "intro": "A short self-check per stage, built from the real send-backs in Examples. Pick an answer to see why it's right or wrong.",
+      "score": "{correct} / {answered} correct",
+      "reset": "Reset",
+      "correct": "Correct",
+      "wrong": "Not quite",
+      "seeExample": "See the example"
+    },
     "stageComingSoon": "Coming soon."
   },
   "examples": {
