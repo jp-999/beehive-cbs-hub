@@ -1,9 +1,5 @@
 # Beehive SxSxS — Common Errors and How to Avoid Them
 
-> Faithful transcription of the canonical deck `Beehive_SxSxS_Common_errors_with_notes.pptx`.
-> Do not change the meaning — the original deck is the source of truth (kept in `content/assets/`).
-> Everything here comes from three sources only: the Beehive course, the admin QC feedback, and the updated Beehive Instructions.
-
 ## Slide 1 — Beehive SxSxS
 **Common errors and how to avoid them.** What sent tasks back in real audits, and the rule that prevents each one.
 
@@ -188,5 +184,3 @@ Justification: name the best, the middle and the worst model, in the order of th
 - Country fit 3 for any foreign unit or spelling
 - Ranking and justification match your scores
 - Every deliverable zipped; nothing personal
-
-> **Awaiting admin confirmation** (treat the Instructions as canonical until confirmed): every-turn language vs natural locale switching · the turn number inside the Detail line vs only in Column 5 · whether register counts toward Country fit.

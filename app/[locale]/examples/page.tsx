@@ -30,7 +30,7 @@ function Badge({ children, tone = 'default' }: { children: React.ReactNode; tone
   );
 }
 
-function ExampleCardLink({ e, mapsTo }: { e: ExampleItem; mapsTo: string }) {
+function ExampleCardLink({ e }: { e: ExampleItem }) {
   return (
     <Link href={`/examples/${e.slug}` as `/${string}`} style={cardStyle}>
       <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '10px' }}>
@@ -39,8 +39,8 @@ function ExampleCardLink({ e, mapsTo }: { e: ExampleItem; mapsTo: string }) {
         <Badge tone="muted">{e.locale}</Badge>
       </div>
       <h3 style={{ margin: '0 0 6px', fontSize: '1rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>{e.title}</h3>
-      <p style={{ margin: '0 0 10px', fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{e.finding}</p>
-      <p style={{ margin: 0, fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>{mapsTo}: {e.stage}</p>
+      <p style={{ margin: '0 0 12px', fontSize: '0.85rem', color: 'var(--color-text-secondary)', lineHeight: 1.5 }}>{e.finding}</p>
+      <Badge tone="muted">{e.stage}</Badge>
     </Link>
   );
 }
@@ -63,7 +63,6 @@ export default async function ExamplesPage({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: 'examples' });
-  const mapsTo = t('mapsTo');
   const refs = EXAMPLES.filter((e) => e.group === 'reference');
   const passes = EXAMPLES.filter((e) => e.group === 'pass');
   const fails = EXAMPLES.filter((e) => e.group === 'fail');
@@ -82,13 +81,9 @@ export default async function ExamplesPage({
         ]}
       />
 
-      <p style={{ fontSize: '0.8125rem', color: 'var(--color-text-muted)', marginTop: 0, marginBottom: '28px' }}>
-        {t('sourceNote')}
-      </p>
-
       {/* Reference anatomy — start here */}
       {refs.map((e) => (
-        <Link key={e.slug} href={`/examples/${e.slug}` as `/${string}`} style={{ ...cardStyle, border: '1px solid var(--color-amber-700)', background: 'linear-gradient(135deg, #2A200E 0%, var(--color-bg-surface) 70%)', marginBottom: '36px' }}>
+        <Link key={e.slug} href={`/examples/${e.slug}` as `/${string}`} style={{ ...cardStyle, border: '1px solid var(--color-amber-700)', background: 'linear-gradient(135deg, #2A200E 0%, var(--color-bg-surface) 70%)', marginTop: '8px', marginBottom: '36px' }}>
           <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap', marginBottom: '10px' }}>
             <Badge>Start here</Badge>
             {e.result && <Badge tone="green">{e.result}</Badge>}
@@ -103,13 +98,13 @@ export default async function ExamplesPage({
       <h2 style={sectionHeading}>{t('cleanPasses')}</h2>
       <p style={sectionNote}>{t('cleanPassesNote')}</p>
       <div style={gridStyle}>
-        {passes.map((e) => <ExampleCardLink key={e.slug} e={e} mapsTo={mapsTo} />)}
+        {passes.map((e) => <ExampleCardLink key={e.slug} e={e} />)}
       </div>
 
       <h2 style={sectionHeading}>{t('commonFailures')}</h2>
       <p style={sectionNote}>{t('commonFailuresNote')}</p>
       <div style={{ ...gridStyle, paddingBottom: '48px' }}>
-        {fails.map((e) => <ExampleCardLink key={e.slug} e={e} mapsTo={mapsTo} />)}
+        {fails.map((e) => <ExampleCardLink key={e.slug} e={e} />)}
       </div>
     </>
   );

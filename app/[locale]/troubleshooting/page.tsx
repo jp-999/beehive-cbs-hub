@@ -41,19 +41,6 @@ export default async function TroubleshootingPage({
     { icon: '🎓', title: t('courses.title'), body: t('courses.body') },
   ];
 
-  const detailsSoon = (
-    <span
-      style={{
-        display: 'inline-flex', alignItems: 'center', marginTop: '14px',
-        fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em',
-        color: 'var(--color-amber-400)', border: '1px solid var(--color-amber-700)',
-        borderRadius: 'var(--radius-full)', padding: '2px 10px',
-      }}
-    >
-      {t('detailsSoon')}
-    </span>
-  );
-
   return (
     <>
       <PageHeader
@@ -66,21 +53,6 @@ export default async function TroubleshootingPage({
       />
 
       <div style={{ paddingBottom: '48px', maxWidth: '820px' }}>
-        <div
-          style={{
-            borderLeft: '3px solid var(--color-amber-700)',
-            background: 'var(--color-bg-callout-info)',
-            padding: '12px 16px',
-            borderRadius: '0 var(--radius-sm) var(--radius-sm) 0',
-            color: 'var(--color-text-secondary)',
-            fontSize: '0.9rem',
-            lineHeight: 1.55,
-            marginBottom: '28px',
-          }}
-        >
-          {t('comingSoonNote')}
-        </div>
-
         {topics.map((topic) => (
           <section key={topic.title} style={cardStyle}>
             <h2 style={{ margin: '0 0 8px', fontSize: '1.15rem', fontWeight: 700, color: 'var(--color-text-primary)' }}>
@@ -104,7 +76,6 @@ export default async function TroubleshootingPage({
                 </a>
               </p>
             )}
-            <div>{detailsSoon}</div>
           </section>
         ))}
 

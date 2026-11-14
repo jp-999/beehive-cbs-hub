@@ -43,8 +43,14 @@ function badge(tone: 'red' | 'green' | 'muted'): React.CSSProperties {
     green: { background: '#0D2B1A', color: '#86EFAC', border: '1px solid #14532D' },
     muted: { background: 'var(--color-bg-icon-tile)', color: 'var(--color-text-muted)', border: '1px solid var(--color-border-default)' },
   } as const;
-  return { ...tones[tone], padding: '2px 10px', borderRadius: 'var(--radius-full)', fontSize: '0.75rem', fontWeight: 700 };
+  return { ...tones[tone], padding: '2px 10px', borderRadius: 'var(--radius-full)', fontSize: '0.75rem', fontWeight: 700, whiteSpace: 'nowrap' };
 }
+
+const sectionLabel: React.CSSProperties = {
+  fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase',
+  color: 'var(--color-amber-400)', margin: '0 0 8px',
+};
+const bodyText: React.CSSProperties = { color: 'var(--color-text-secondary)', lineHeight: 1.7, fontSize: '0.95rem', margin: 0 };
 
 export default async function ExampleDetailPage({
   params,
@@ -85,7 +91,12 @@ export default async function ExampleDetailPage({
     );
   }
 
-  // Self-contained finding page (not a redirect to Common Errors)
+  // Detailed, self-contained walkthrough
+  const labels = isPass
+    ? { finding: t('whyExample'), why: t('whatItDoesRight'), fix: t('howToReplicate') }
+    : { finding: t('whatQcFound'), why: t('whyItMatters'), fix: t('howToGetRight') };
+  const accent = isPass ? '#86EFAC' : 'var(--color-amber-400)';
+
   return (
     <>
       <PageHeader
@@ -96,29 +107,70 @@ export default async function ExampleDetailPage({
           { label: example.title },
         ]}
       />
-      <div style={{ paddingBottom: '48px', maxWidth: '760px' }}>
-        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '20px' }}>
+      <article style={{ paddingBottom: '48px', maxWidth: '760px' }}>
+        {/* Chips */}
+        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '28px' }}>
           {example.errorCode && <span style={badge('red')}>{example.errorCode}</span>}
           {example.result && <span style={badge('green')}>{example.result}</span>}
           <span style={badge('muted')}>{example.locale}</span>
+          <span style={badge('muted')}>{example.stage}</span>
         </div>
 
-        <div className="doc-card">
-          <h2 style={{ margin: '0 0 8px', fontSize: '1rem', fontWeight: 700, color: isPass ? '#86EFAC' : 'var(--color-amber-400)' }}>
-            {isPass ? t('whyExample') : t('whatQcFound')}
-          </h2>
-          <p style={{ margin: 0, color: 'var(--color-text-secondary)', lineHeight: 1.65, fontSize: '0.95rem' }}>{example.finding}</p>
-        </div>
+        {/* What happened */}
+        {example.scenario && (
+          <section style={{ marginBottom: '26px' }}>
+            <h2 style={sectionLabel}>{t('whatHappened')}</h2>
+            <p style={bodyText}>{example.scenario}</p>
+          </section>
+        )}
 
-        <p style={{ margin: '16px 0 0', fontSize: '0.875rem', color: 'var(--color-text-muted)' }}>
-          {t('mapsTo')}: <strong style={{ color: 'var(--color-text-secondary)' }}>{example.stage}</strong>{' · '}
-          <Link href="/common-errors" style={{ color: 'var(--color-amber-400)' }}>Common Errors</Link>
-        </p>
+        {/* What QC found / Why it's an example — emphasised */}
+        <section className="doc-card" style={{ marginBottom: '26px' }}>
+          <h2 style={{ margin: '0 0 8px', fontSize: '1rem', fontWeight: 700, color: accent }}>{labels.finding}</h2>
+          <p style={bodyText}>{example.finding}</p>
+        </section>
 
-        <p style={{ marginTop: '28px' }}>
+        {/* Why it matters / What it does right */}
+        {example.why && (
+          <section style={{ marginBottom: '26px' }}>
+            <h2 style={sectionLabel}>{labels.why}</h2>
+            <p style={bodyText}>{example.why}</p>
+          </section>
+        )}
+
+        {/* How to get it right / How to replicate */}
+        {example.fix && (
+          <section style={{ marginBottom: '26px' }}>
+            <h2 style={sectionLabel}>{labels.fix}</h2>
+            <p style={bodyText}>{example.fix}</p>
+          </section>
+        )}
+
+        {/* The rule */}
+        {example.rule && (
+          <div
+            role="note"
+            style={{
+              borderLeft: '3px solid var(--color-amber-700)',
+              background: 'var(--color-bg-callout-info)',
+              padding: '14px 18px',
+              borderRadius: '0 var(--radius-sm) var(--radius-sm) 0',
+              color: 'var(--color-text-secondary)',
+              fontSize: '0.95rem',
+              lineHeight: 1.6,
+            }}
+          >
+            <span style={{ display: 'block', marginBottom: '4px', fontWeight: 700, color: accent, textTransform: 'uppercase', fontSize: '0.72rem', letterSpacing: '0.06em' }}>
+              {t('theRule')}
+            </span>
+            {example.rule}
+          </div>
+        )}
+
+        <p style={{ marginTop: '32px' }}>
           <Link href="/examples" style={{ color: 'var(--color-amber-400)', fontSize: '0.875rem' }}>{t('back')}</Link>
         </p>
-      </div>
+      </article>
     </>
   );
 }
