@@ -6,6 +6,7 @@ export type SectionId =
   | 'accounts'
   | 'common-errors'
   | 'examples'
+  | 'troubleshooting'
   | 'outlier-community'
   | 'contact';
 
@@ -53,6 +54,13 @@ export const SECTIONS: Section[] = [
     id: 'examples',
     target: { kind: 'internal', href: '/examples' },
     icon: '📝',
+    inNav: true,
+    inGrid: true,
+  },
+  {
+    id: 'troubleshooting',
+    target: { kind: 'internal', href: '/troubleshooting' },
+    icon: '🛠️',
     inNav: true,
     inGrid: true,
   },

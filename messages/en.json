@@ -12,6 +12,7 @@
     "materials": "Materials",
     "commonErrors": "Common Errors",
     "examples": "Examples",
+    "troubleshooting": "Troubleshooting",
     "contact": "Contact",
     "outlierCommunity": "Outlier Community"
   },
@@ -52,6 +53,10 @@
       "title": "Examples",
       "description": "QC-scored worked examples with satisfaction, issues, rubric, and country fit."
     },
+    "troubleshooting": {
+      "title": "Troubleshooting",
+      "description": "Fixes for demo accounts, payments, and claiming or activating your courses."
+    },
     "outlier-community": {
       "title": "Outlier Community",
       "description": "Join the Beehive channel for news, updates, and the War Room."
@@ -82,6 +87,8 @@
     "tocLabel": "Page contents",
     "jumpToSection": "Jump to section",
     "rubricLink": "QC Spec Rubric",
+    "memoryGuideLink": "Turn off memory",
+    "memoryGuideBreadcrumb": "Turn off memory",
     "stageComingSoon": "Coming soon."
   },
   "rubric": {
@@ -157,6 +164,33 @@
     "breadcrumbHome": "Home",
     "breadcrumbSelf": "Accounts & Setup",
     "stageComingSoon": "Coming soon."
+  },
+  "troubleshooting": {
+    "title": "Troubleshooting",
+    "description": "Fixes for the common blockers — your demo account, payments, and claiming or activating your courses.",
+    "breadcrumbHome": "Home",
+    "breadcrumbSelf": "Troubleshooting",
+    "comingSoonNote": "Step-by-step fixes are being finalised with the team. Until they land here, use the help channels at the bottom of this page — they are all live now.",
+    "demo": {
+      "title": "Demo account",
+      "body": "You can't open, claim, or load your demo account, or it won't let you start the task.",
+      "cta": "Claim a demo account"
+    },
+    "payment": {
+      "title": "Payment & credit card",
+      "body": "Your card was declined, billing shows an error, or you need to add or change a payment method."
+    },
+    "courses": {
+      "title": "Courses: claim & activate",
+      "body": "How to claim the Beehive courses and activate them before you pick up tasks."
+    },
+    "detailsSoon": "Detailed steps coming soon",
+    "helpTitle": "Still stuck? Get help",
+    "helpBody": "The team is in these channels now — reach out with a short description and a screenshot:",
+    "warRoom": "Join the War Room (Google Meet)",
+    "dashboard": "Open your dashboard",
+    "community": "Ask in the Beehive channel (Outlier Community)",
+    "contactQMs": "See your QMs and their hours"
   },
   "contact": {
     "title": "Who to Contact",

@@ -23,6 +23,7 @@ const sectionNavKeys: Record<SectionId, string> = {
   accounts: 'onboarding', // not inNav, won't be used
   'common-errors': 'commonErrors',
   examples: 'examples',
+  troubleshooting: 'troubleshooting',
   'outlier-community': 'outlierCommunity',
   contact: 'contact',
 };
