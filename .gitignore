@@ -5,3 +5,5 @@ out
 .devteam
 .DS_Store
 content/data
+.env.local
+.env*.local
