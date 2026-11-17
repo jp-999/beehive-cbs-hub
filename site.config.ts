@@ -57,9 +57,9 @@ export const siteConfig: SiteConfig = {
   },
   qms: [
     { name: 'Huan Francischinelli', role: 'QM', hours: '7 AM – 3 PM PST', oc: 'Huan_QM' },
-    { name: 'Yash Attri', role: 'QM · Usually helps with UK tasks', languages: 'English (UK)', hours: '2:30 AM – 10:30 AM PST (3 PM – 11 PM IST)', oc: 'yash.attri' },
+    { name: 'Yash Attri', role: 'QM · Usually helps with UK tasks', languages: 'English (UK)', hours: '2:30 AM – 10:30 AM PST (3 PM – 11 PM IST)', oc: 'yash_attri_qmo_code' },
     { name: 'Jayanth Peddi', role: 'QM', hours: '12 PM – 8 PM IST', oc: 'Jayanth_Peddi_QM' },
     { name: 'Davide Sell', role: 'QM · Usually helps with Korean tasks', languages: 'Korean', hours: 'Mon–Fri 10 AM – 7 PM KST (6 PM – 3 AM PST), some weekend hours', oc: 'Davide_QMO_IT' },
-    { name: 'Hiro Yoshioka', role: 'QM · Japanese contributors', languages: 'Japanese', oc: 'Hiro_QMO_JP' },
+    { name: 'Hiro Yoshioka', role: 'QM · Japanese contributors', languages: 'Japanese', hours: 'Mon 04:00-09:00 JST · Tue 17:30-22:30 CST (UTC-06:00, not CDT) · Wed onwards 04:00-07:00 and 17:30-22:30 CST', oc: 'Hiro_QMO_JP' },
   ],
 };
