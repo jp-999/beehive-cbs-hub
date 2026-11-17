@@ -35,7 +35,7 @@
   "sections": {
     "onboarding": {
       "title": "Onboarding",
-      "description": "Read your task row, complete setup, and learn the submission flow."
+      "description": "Watch the onboarding webinar for your language and get set up."
     },
     "materials": {
       "title": "Materials",
@@ -71,10 +71,20 @@
   },
   "onboarding": {
     "title": "Onboarding",
-    "description": "Reading your task row, setup, and the submission flow.",
-    "comingSoon": "Onboarding videos will appear here. Check back soon.",
+    "description": "Watch the onboarding webinar for your language, then finish setup and start your first task.",
     "breadcrumbHome": "Home",
     "breadcrumbSelf": "Onboarding",
+    "webinarLabel": "Onboarding webinar",
+    "videoComingSoonLocale": "The onboarding webinar in your language is coming soon.",
+    "availableNow": "Available now in other languages:",
+    "watchRecording": "Watch the {language} recording",
+    "download": "Download the video",
+    "nextStepsTitle": "After the webinar",
+    "nextStepsBody": "Finish your setup and skim the rules before your first task:",
+    "stepAccounts": "Set up your accounts and demo account",
+    "stepMaterials": "Read the Beehive Instructions",
+    "stepCommonErrors": "Check the errors that send tasks back",
+    "comingSoon": "Onboarding videos will appear here. Check back soon.",
     "stageComingSoon": "Coming soon.",
     "videoComingSoon": "Video URL coming soon",
     "videosLabel": "Onboarding videos"

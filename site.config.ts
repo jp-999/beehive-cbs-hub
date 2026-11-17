@@ -17,11 +17,8 @@ interface SiteConfig {
   locales: readonly { code: string; label: string }[];
   defaultLocale: 'en';
   mascot: { name: Placeholder<string> };
-  onboardingVideos: {
-    id: 'task-row' | 'setup' | 'submission';
-    title: Placeholder<string>;
-    url: Placeholder<string>;
-  }[];
+  /** One onboarding webinar recording per locale code. */
+  onboardingVideoByLocale: Record<string, Placeholder<string>>;
   links: {
     outlierCommunity: Placeholder<string>;
     warRoom: Placeholder<string>;
@@ -43,12 +40,15 @@ export const siteConfig: SiteConfig = {
   ],
   defaultLocale: 'en',
   mascot: { name: { status: 'ready', value: 'Buzz' } },
-  // Onboarding tab is dropped for now; these stay for easy re-enable later.
-  onboardingVideos: [
-    { id: 'task-row', title: { status: 'placeholder', preview: 'Reading your task row', note: 'video title TBD' }, url: { status: 'placeholder', note: 'video URL TBD' } },
-    { id: 'setup', title: { status: 'placeholder', preview: 'Setup', note: 'video title TBD' }, url: { status: 'placeholder', note: 'video URL TBD' } },
-    { id: 'submission', title: { status: 'placeholder', preview: 'Submission flow', note: 'video title TBD' }, url: { status: 'placeholder', note: 'video URL TBD' } },
-  ],
+  // Onboarding webinar recording per language. Add a locale's URL to go live.
+  onboardingVideoByLocale: {
+    en: { status: 'placeholder', note: 'English webinar recording TBD' },
+    'fr-FR': { status: 'ready', value: 'https://static.remotasks.com/uploads/6ae1115bd103bdba12c06461/NEW171126FRWebinar.mp4' },
+    'de-DE': { status: 'ready', value: 'https://static.remotasks.com/uploads/6ae1115bd103bdba12c06461/video1644506591.mp4' },
+    'ja-JP': { status: 'placeholder', note: 'Japanese webinar recording TBD' },
+    'ko-KR': { status: 'placeholder', note: 'Korean webinar recording TBD' },
+    'pt-BR': { status: 'placeholder', note: 'Portuguese webinar recording TBD' },
+  },
   links: {
     outlierCommunity: { status: 'ready', value: 'https://community.outlier.ai/c/beehive-channel/18721' },
     warRoom: { status: 'ready', value: 'https://meet.google.com/nmj-vgss-ohb' },

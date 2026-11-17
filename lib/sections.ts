@@ -26,9 +26,14 @@ export interface Section {
 
 import { siteConfig } from '@/site.config';
 
-// NOTE: 'onboarding' is intentionally omitted for now (tab dropped); re-add this
-// entry to bring the Onboarding card + nav item back.
 export const SECTIONS: Section[] = [
+  {
+    id: 'onboarding',
+    target: { kind: 'internal', href: '/onboarding' },
+    icon: '🚀',
+    inNav: true,
+    inGrid: true,
+  },
   {
     id: 'materials',
     target: { kind: 'internal', href: '/materials' },
