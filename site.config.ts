@@ -18,7 +18,7 @@ interface SiteConfig {
   defaultLocale: 'en';
   mascot: { name: Placeholder<string> };
   /** One onboarding webinar recording per locale code. */
-  onboardingVideoByLocale: Record<string, Placeholder<string>>;
+  onboardingVideoByLocale: Record<string, { url: Placeholder<string>; recordedOn?: string }>;
   links: {
     outlierCommunity: Placeholder<string>;
     warRoom: Placeholder<string>;
@@ -42,12 +42,12 @@ export const siteConfig: SiteConfig = {
   mascot: { name: { status: 'ready', value: 'Buzz' } },
   // Onboarding webinar recording per language. Add a locale's URL to go live.
   onboardingVideoByLocale: {
-    en: { status: 'placeholder', note: 'English webinar recording TBD' },
-    'fr-FR': { status: 'ready', value: 'https://static.remotasks.com/uploads/6ae1115bd103bdba12c06461/NEW171126FRWebinar.mp4' },
-    'de-DE': { status: 'ready', value: 'https://static.remotasks.com/uploads/6ae1115bd103bdba12c06461/video1644506591.mp4' },
-    'ja-JP': { status: 'placeholder', note: 'Japanese webinar recording TBD' },
-    'ko-KR': { status: 'placeholder', note: 'Korean webinar recording TBD' },
-    'pt-BR': { status: 'placeholder', note: 'Portuguese webinar recording TBD' },
+    en: { url: { status: 'placeholder', note: 'English webinar recording TBD' } },
+    'fr-FR': { url: { status: 'ready', value: 'https://static.remotasks.com/uploads/6ae1115bd103bdba12c06461/NEW171126FRWebinar.mp4' }, recordedOn: '17 November 2026' },
+    'de-DE': { url: { status: 'ready', value: 'https://static.remotasks.com/uploads/6ae1115bd103bdba12c06461/video1644506591.mp4' } },
+    'ja-JP': { url: { status: 'placeholder', note: 'Japanese webinar recording TBD' } },
+    'ko-KR': { url: { status: 'placeholder', note: 'Korean webinar recording TBD' } },
+    'pt-BR': { url: { status: 'placeholder', note: 'Portuguese webinar recording TBD' } },
   },
   links: {
     outlierCommunity: { status: 'ready', value: 'https://community.outlier.ai/c/beehive-channel/18721' },

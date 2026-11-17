@@ -71,9 +71,11 @@
   },
   "onboarding": {
     "title": "Onboarding",
-    "description": "Watch the onboarding webinar for your language, then finish setup and start your first task.",
+    "description": "New to Beehive? Start with this video before you claim your first task.",
     "breadcrumbHome": "Home",
     "breadcrumbSelf": "Onboarding",
+    "recordingTitle": "Onboarding session recording",
+    "recordingBlurb": "Start here. The full live onboarding session, recorded.",
     "webinarLabel": "Onboarding webinar",
     "videoComingSoonLocale": "The onboarding webinar in your language is coming soon.",
     "availableNow": "Available now in other languages:",
