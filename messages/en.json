@@ -78,6 +78,7 @@
     "recordingBlurb": "Start here. The full live onboarding session, recorded.",
     "webinarLabel": "Onboarding webinar",
     "videoComingSoonLocale": "The onboarding webinar in your language is coming soon.",
+    "shownInLanguage": "Shown in {language} — the onboarding webinar in your language is coming soon.",
     "availableNow": "Available now in other languages:",
     "watchRecording": "Watch the {language} recording",
     "download": "Download the video",
