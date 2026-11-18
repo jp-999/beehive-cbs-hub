@@ -4,6 +4,7 @@ import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { getInstructionSection, SECTION_IDS } from '@/lib/content/instructions';
 import { getCommonErrors } from '@/lib/content/common-errors';
+import { getPageMd } from '@/lib/content/page-md';
 import PageHeader from '@/components/PageHeader';
 import Prose from '@/components/Prose';
 import FallbackNotice from '@/components/FallbackNotice';
@@ -21,6 +22,7 @@ export default async function AccountsPage({
   const t = await getTranslations({ locale, namespace: 'accounts' });
   const accountsSection = await getInstructionSection(locale, SECTION_IDS.accounts);
   const errors = await getCommonErrors(locale);
+  const replacement = getPageMd(locale, 'replacement-account.md');
 
   // Model/mode (#7) slides: redo slides whose error numbers include 7
   const modelSlides = errors.redo.filter((s) => s.errorNumbers.includes(7));
@@ -44,6 +46,23 @@ export default async function AccountsPage({
         <div className="doc-card">
           <Prose html={accountsSection.html} />
         </div>
+
+        {/* Replacement demo account (new feature) */}
+        {replacement && (
+          <section
+            style={{
+              marginTop: '24px',
+              background: 'var(--color-bg-surface)',
+              border: '1px solid var(--color-border-default)',
+              borderLeft: '4px solid var(--color-amber-500)',
+              borderRadius: 'var(--radius-lg)',
+              padding: '20px 24px',
+              boxShadow: 'var(--shadow-card)',
+            }}
+          >
+            <Prose html={replacement} />
+          </section>
+        )}
 
         {/* Model / mode setup (#7) from the common-errors deck */}
         {modelSlides.length > 0 && (

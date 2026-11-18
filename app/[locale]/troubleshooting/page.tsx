@@ -1,12 +1,10 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import { notFound } from 'next/navigation';
 import { hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
 import { siteConfig } from '@/site.config';
-import { renderFull } from '@/lib/content/markdown';
+import { getPageMd } from '@/lib/content/page-md';
 import PageHeader from '@/components/PageHeader';
 import Prose from '@/components/Prose';
 
@@ -21,24 +19,6 @@ const cardStyle: React.CSSProperties = {
 
 const linkStyle: React.CSSProperties = { color: 'var(--color-amber-400)', fontWeight: 600 };
 
-function getBody(locale: string): string {
-  const paths =
-    locale !== 'en'
-      ? [
-          path.join(process.cwd(), 'content', 'translations', locale, 'troubleshooting.md'),
-          path.join(process.cwd(), 'content', 'source', 'troubleshooting.md'),
-        ]
-      : [path.join(process.cwd(), 'content', 'source', 'troubleshooting.md')];
-  for (const p of paths) {
-    try {
-      if (fs.existsSync(p)) return renderFull(fs.readFileSync(p, 'utf8'));
-    } catch {
-      /* try next candidate */
-    }
-  }
-  return '';
-}
-
 export default async function TroubleshootingPage({
   params,
 }: {
@@ -50,7 +30,8 @@ export default async function TroubleshootingPage({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: 'troubleshooting' });
-  const body = getBody(locale);
+  const body = getPageMd(locale, 'troubleshooting.md');
+  const replacement = getPageMd(locale, 'replacement-account.md');
   const { warRoom, dashboard, outlierCommunity, demoAccountClaim } = siteConfig.links;
 
   return (
@@ -80,6 +61,12 @@ export default async function TroubleshootingPage({
               {t('demo.cta')} <span aria-hidden="true">↗</span>
             </a>
           </p>
+        )}
+
+        {replacement && (
+          <section style={{ ...cardStyle, borderLeft: '4px solid var(--color-amber-500)' }}>
+            <Prose html={replacement} />
+          </section>
         )}
 
         {body && (
