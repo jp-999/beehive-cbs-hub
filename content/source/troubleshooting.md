@@ -27,6 +27,24 @@
 
 ![Your Demo Account screen in Outlier — click Reveal to copy the username and password](media/troubleshooting/demo-2.png)
 
+## 📣 Gemini mobile: turn off auto model selection
+
+On the Gemini mobile app, Gemini sometimes switches from the required model to another model in the middle of a chat. **A run on the wrong model is not valid.**
+
+**Fix: do this before Turn 1**
+
+1. Open the **Gemini mobile app**.
+2. Tap the **Menu** (top left).
+3. Go to **Settings > Usage limits**.
+4. Toggle **auto model selection off**.
+
+**Notes**
+
+- This is for **mobile only**.
+- Check that the **correct model is still selected** before you send Turn 1.
+
+> 📣 Source: [Gemini Mobile: Turn Off Auto Model Selection](https://community.outlier.ai/t/gemini-mobile-turn-off-auto-model-selection/2982084) (Outlier Community)
+
 ## 💳 Payment & credit card
 
 ### Activate your virtual card
