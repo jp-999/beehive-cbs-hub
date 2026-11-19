@@ -188,3 +188,33 @@ a:hover {
 .doc-card { background: var(--color-bg-surface); border: 1px solid var(--color-border-default); border-radius: var(--radius-lg); padding: 20px 24px; margin: 0 0 20px; box-shadow: var(--shadow-card); }
 .doc-card > :first-child { margin-top: 0; }
 .doc-card > :last-child { margin-bottom: 0; }
+
+/* ── Bee page-transition loader ── */
+.bee-loader { position: fixed; inset: 0 0 auto 0; height: 3px; z-index: 9999; pointer-events: none; }
+.bee-loader__bar {
+  position: absolute; top: 0; left: 0; height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--color-amber-600), var(--color-amber-400), var(--color-amber-300));
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 10px 1px rgba(245, 158, 11, 0.7);
+  animation: beeLoaderGrow 2.4s cubic-bezier(0.1, 0.7, 0.2, 1) forwards;
+}
+.bee-loader__bee {
+  position: absolute; top: -9px; right: -6px; font-size: 16px; line-height: 1;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.45));
+  animation: beeLoaderWobble 0.5s ease-in-out infinite;
+}
+@keyframes beeLoaderGrow {
+  0% { width: 0; }
+  25% { width: 40%; }
+  55% { width: 65%; }
+  80% { width: 82%; }
+  100% { width: 90%; }
+}
+@keyframes beeLoaderWobble {
+  0%, 100% { transform: translateY(0) rotate(-8deg); }
+  50% { transform: translateY(-2px) rotate(8deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .bee-loader__bar { animation-duration: 0.01s; width: 90%; }
+  .bee-loader__bee { animation: none; }
+}

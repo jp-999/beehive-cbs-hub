@@ -8,6 +8,7 @@ import { SECTIONS } from '@/lib/sections';
 import type { SectionId } from '@/lib/sections';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
+import BeeLoader from '@/components/BeeLoader';
 import '../globals.css';
 
 export const dynamicParams = false;
@@ -81,6 +82,7 @@ export default async function LocaleLayout({
         }}
       >
         <NextIntlClientProvider messages={messages}>
+          <BeeLoader />
           <a href="#main" className="skip-link">
             {tSkip('label')}
           </a>
