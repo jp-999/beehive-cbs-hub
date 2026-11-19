@@ -163,7 +163,7 @@ export default function Hero({ title, mascotName, intro, ctas }: HeroProps) {
             background: 'rgba(245,158,11,0.1)',
           }}
         >
-          🐝
+          <span className="hero-mascot-bee">🐝</span>
         </div>
         <span
           style={{
@@ -172,9 +172,9 @@ export default function Hero({ title, mascotName, intro, ctas }: HeroProps) {
             gap: '4px',
           }}
         >
-          <span>✿</span>
-          <span>✿</span>
-          <span>✿</span>
+          <span className="hero-flower">✿</span>
+          <span className="hero-flower" style={{ animationDelay: '0.3s' }}>✿</span>
+          <span className="hero-flower" style={{ animationDelay: '0.6s' }}>✿</span>
         </span>
       </div>
     </section>

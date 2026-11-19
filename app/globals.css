@@ -291,8 +291,22 @@ a:hover {
   15% { opacity: 0.55; }
   100% { transform: translate(-26px, -150px) scale(0.3); opacity: 0; }
 }
+/* Resting mascot: buzz in place + swaying flowers */
+.hero-mascot-bee { display: inline-block; animation: mascotBuzz 1.8s ease-in-out infinite; }
+@keyframes mascotBuzz {
+  0%, 100% { transform: translateY(0) rotate(-5deg); }
+  25% { transform: translateY(-3px) rotate(4deg); }
+  50% { transform: translateY(0) rotate(-3deg); }
+  75% { transform: translateY(-2px) rotate(5deg); }
+}
+.hero-flower { display: inline-block; transform-origin: 50% 80%; animation: flowerSway 2.4s ease-in-out infinite; }
+@keyframes flowerSway {
+  0%, 100% { transform: rotate(-8deg) scale(1); }
+  50% { transform: rotate(8deg) scale(1.12); }
+}
 @media (prefers-reduced-motion: reduce) {
   .hero-bee { animation: none; left: 82%; top: 28%; transform: scaleX(1); }
   .hero-bee > span { animation: none; }
   .hero-pollen { animation: none; opacity: 0; }
+  .hero-mascot-bee, .hero-flower { animation: none; }
 }
