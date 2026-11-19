@@ -76,6 +76,8 @@
     "breadcrumbSelf": "Onboarding",
     "recordingTitle": "Onboarding session recording",
     "recordingBlurb": "Start here. The full live onboarding session, recorded.",
+    "walkthroughTitle": "Task walkthrough",
+    "walkthroughBlurb": "A full walkthrough of a Beehive task, from setup to submission.",
     "webinarLabel": "Onboarding webinar",
     "videoComingSoonLocale": "The onboarding webinar in your language is coming soon.",
     "shownInLanguage": "Shown in {language} — the onboarding webinar in your language is coming soon.",
