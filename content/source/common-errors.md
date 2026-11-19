@@ -13,7 +13,7 @@ Most failures come from a few repeated errors.
 **FORM ERROR** — QC can correct it, but each one counts against the task: #11 Issues · #2 Satisfaction · #12 Detail format · #13 Rubric · #3/#4 Ranking · #14 Country fit
 
 ## Slide 3 — Redo #7 · Wrong model or mode (failed on 30 of 39 audited tasks)
-- **Gemini** — required: Argon, with the Chat/Task toggle on **Task**. Seen in audits: toggle not visible in 18 tasks (screenshot taken after sending, hidden by the screen-share bar, or from another chat).
+- **Gemini** — required: Carbon, with the Chat/Task toggle on **Task**. Seen in audits: toggle not visible in 18 tasks (screenshot taken after sending, hidden by the screen-share bar, or from another chat).
 - **ChatGPT** — required: cGPT 6 Astra, on a paid plan. Seen in audits: Instant, Thinking, mini or a Free account in 11 tasks. Also wrong: GPT-6.1, Sol, plain "GPT-6".
 - **Claude** — required: Fable 5.1, in the Claude app. Seen in audits: Sonnet or Opus 5.5 in 7 tasks, usually because Fable needed paid credits. Also wrong: 5.2, Claude Code.
 - Can't use the assigned model? **Stop and contact the team. Don't switch models.**
@@ -167,7 +167,7 @@ Justification: name the best, the middle and the worst model, in the order of th
 
 ## Slide 15 — Pre-submit self-check (a miss means a redo)
 **Conversations**
-- Gemini: Argon, toggle on Task, not sent
+- Gemini: Carbon, toggle on Task, not sent
 - ChatGPT cGPT 6 Astra (paid), Claude Fable 5.1
 - Turn 1: the exact pre-seeded prompt, all three
 - Every next step asked, in first person

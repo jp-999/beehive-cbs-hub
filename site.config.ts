@@ -53,7 +53,7 @@ export const siteConfig: SiteConfig = {
   },
   taskWalkthroughByLocale: {
     en: { url: { status: 'placeholder', note: 'English task walkthrough TBD' } },
-    'fr-FR': { url: { status: 'placeholder', note: 'French task walkthrough TBD' } },
+    'fr-FR': { url: { status: 'ready', value: 'https://static.remotasks.com/uploads/6ae1115bd103bdba12c06461/Frenchwalthrough.mp4' } },
     'de-DE': { url: { status: 'ready', value: 'https://static.remotasks.com/uploads/6ae1115bd103bdba12c06461/Beehive%20Task%20Walktrough%20-%20German.mp4' } },
     'ja-JP': { url: { status: 'placeholder', note: 'Japanese task walkthrough TBD' } },
     'ko-KR': { url: { status: 'placeholder', note: 'Korean task walkthrough TBD' } },
