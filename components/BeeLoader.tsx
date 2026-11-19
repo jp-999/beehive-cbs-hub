@@ -30,18 +30,20 @@ export default function BeeLoader() {
     return () => document.removeEventListener('click', onClick, true);
   }, []);
 
-  // Clear shortly after the route changes (minimum visible time keeps it smooth).
+  // Keep the loader visible for at least ~3s so the transition clearly registers,
+  // then clear (the destination page is already rendered behind the overlay).
+  const MIN_VISIBLE_MS = 3000;
   useEffect(() => {
     if (!loading) return;
     const elapsed = Date.now() - startRef.current;
-    const id = setTimeout(() => setLoading(false), Math.max(0, 550 - elapsed));
+    const id = setTimeout(() => setLoading(false), Math.max(0, MIN_VISIBLE_MS - elapsed));
     return () => clearTimeout(id);
   }, [loading, pathname]);
 
-  // Safety: never stick for more than 4s (e.g. same-page or blocked clicks).
+  // Safety: never stick for more than 6s (e.g. same-page or blocked clicks).
   useEffect(() => {
     if (!loading) return;
-    const id = setTimeout(() => setLoading(false), 4000);
+    const id = setTimeout(() => setLoading(false), 6000);
     return () => clearTimeout(id);
   }, [loading]);
 
