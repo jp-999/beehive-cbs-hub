@@ -19,6 +19,8 @@ interface SiteConfig {
   mascot: { name: Placeholder<string> };
   /** One onboarding webinar recording per locale code. */
   onboardingVideoByLocale: Record<string, { url: Placeholder<string>; recordedOn?: string }>;
+  /** One task-walkthrough recording per locale code. */
+  taskWalkthroughByLocale: Record<string, { url: Placeholder<string>; recordedOn?: string }>;
   links: {
     outlierCommunity: Placeholder<string>;
     warRoom: Placeholder<string>;
@@ -49,6 +51,14 @@ export const siteConfig: SiteConfig = {
     'ko-KR': { url: { status: 'placeholder', note: 'Korean webinar recording TBD' } },
     'pt-BR': { url: { status: 'placeholder', note: 'Portuguese webinar recording TBD' } },
   },
+  taskWalkthroughByLocale: {
+    en: { url: { status: 'placeholder', note: 'English task walkthrough TBD' } },
+    'fr-FR': { url: { status: 'placeholder', note: 'French task walkthrough TBD' } },
+    'de-DE': { url: { status: 'ready', value: 'https://static.remotasks.com/uploads/6ae1115bd103bdba12c06461/Beehive%20Task%20Walktrough%20-%20German.mp4' } },
+    'ja-JP': { url: { status: 'placeholder', note: 'Japanese task walkthrough TBD' } },
+    'ko-KR': { url: { status: 'placeholder', note: 'Korean task walkthrough TBD' } },
+    'pt-BR': { url: { status: 'placeholder', note: 'Portuguese task walkthrough TBD' } },
+  },
   links: {
     outlierCommunity: { status: 'ready', value: 'https://community.outlier.ai/c/beehive-channel/18721' },
     warRoom: { status: 'ready', value: 'https://meet.google.com/nmj-vgss-ohb' },
@@ -60,6 +70,6 @@ export const siteConfig: SiteConfig = {
     { name: 'Yash Attri', role: 'QM · Usually helps with UK tasks', languages: 'English (UK)', hours: '2:30 AM – 10:30 AM PST (3 PM – 11 PM IST)', oc: 'yash_attri_qmo_code' },
     { name: 'Jayanth Peddi', role: 'QM', hours: '12 PM – 8 PM IST', oc: 'Jayanth_Peddi_QM' },
     { name: 'Davide Sell', role: 'QM · Usually helps with Korean tasks', languages: 'Korean', hours: 'Mon–Fri 10 AM – 7 PM KST (6 PM – 3 AM PST), some weekend hours', oc: 'Davide_QMO_IT' },
-    { name: 'Hiro Yoshioka', role: 'QM · Japanese contributors', languages: 'Japanese', hours: 'Mon 04:00-09:00 JST · Tue 17:30-22:30 CST (UTC-06:00, not CDT) · Wed onwards 04:00-07:00 and 17:30-22:30 CST', oc: 'Hiro_QMO_JP' },
+    { name: 'Hiro Yoshioka', role: 'QM · Japanese contributors', languages: 'Japanese', hours: 'Mon–Fri 04:00-08:00 & 17:30-21:30 CST', oc: 'Hiro_QMO_JP' },
   ],
 };

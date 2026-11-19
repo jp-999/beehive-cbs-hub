@@ -3,7 +3,7 @@ import { hasLocale } from 'next-intl';
 import { setRequestLocale, getTranslations } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { Link } from '@/i18n/navigation';
-import { siteConfig } from '@/site.config';
+import { siteConfig, type Placeholder } from '@/site.config';
 import PageHeader from '@/components/PageHeader';
 
 const cardStyle: React.CSSProperties = {
@@ -30,6 +30,19 @@ interface Recording {
   url: string;
   recordedOn?: string;
 }
+type VideoMap = Record<string, { url: Placeholder<string>; recordedOn?: string }>;
+
+function pickVideo(map: VideoMap, locale: string) {
+  const available: Recording[] = siteConfig.locales.flatMap((l) => {
+    const v = map[l.code]?.url;
+    return v && v.status === 'ready'
+      ? [{ code: l.code, label: l.label, url: v.value, recordedOn: map[l.code]?.recordedOn }]
+      : [];
+  });
+  const own = available.find((a) => a.code === locale);
+  const primary = own ?? available[0] ?? null;
+  return { primary, isOwn: !!own, others: available.filter((a) => a.code !== primary?.code) };
+}
 
 export default async function OnboardingPage({
   params,
@@ -43,20 +56,54 @@ export default async function OnboardingPage({
 
   const t = await getTranslations({ locale, namespace: 'onboarding' });
 
-  // Every ready recording, in the site's locale order.
-  const available: Recording[] = siteConfig.locales.flatMap((l) => {
-    const v = siteConfig.onboardingVideoByLocale[l.code]?.url;
-    return v && v.status === 'ready'
-      ? [{ code: l.code, label: l.label, url: v.value, recordedOn: siteConfig.onboardingVideoByLocale[l.code]?.recordedOn }]
-      : [];
-  });
+  const rec = pickVideo(siteConfig.onboardingVideoByLocale, locale);
+  const walk = pickVideo(siteConfig.taskWalkthroughByLocale, locale);
 
-  // Show the current locale's recording if it has one; otherwise fall back to
-  // the first available recording so the video is visible on every page.
-  const own = available.find((a) => a.code === locale);
-  const primary = own ?? available[0] ?? null;
-  const isOwn = !!own;
-  const others = available.filter((a) => a.code !== primary?.code);
+  const renderCard = (pick: ReturnType<typeof pickVideo>, title: string, blurb: string) => {
+    if (!pick.primary) {
+      return (
+        <section style={cardStyle}>
+          <h2 style={cardTitle}>{title}</h2>
+          <p style={{ margin: 0, color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: 1.6 }}>{t('videoComingSoonLocale')}</p>
+        </section>
+      );
+    }
+    const { primary, isOwn, others } = pick;
+    return (
+      <section style={cardStyle}>
+        <h2 style={cardTitle}>
+          {title}{primary.recordedOn ? ` (${primary.recordedOn})` : ''}
+        </h2>
+        {!isOwn && (
+          <p style={{ margin: '0 0 10px', color: 'var(--color-text-muted)', fontSize: '0.8125rem' }}>
+            🌐 {t('shownInLanguage', { language: primary.label })}
+          </p>
+        )}
+        <p style={{ margin: '0 0 16px', color: 'var(--color-text-secondary)', fontSize: '0.9rem' }}>{blurb}</p>
+        <video
+          controls
+          preload="metadata"
+          playsInline
+          style={{ width: '100%', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border-default)', background: '#000', display: 'block' }}
+        >
+          <source src={primary.url} type="video/mp4" />
+          <a href={primary.url} style={linkStyle}>{t('download')}</a>
+        </video>
+        {others.length > 0 && (
+          <div style={{ marginTop: '16px' }}>
+            <p style={{ margin: '0 0 6px', color: 'var(--color-text-muted)', fontSize: '0.8125rem', fontWeight: 700 }}>{t('availableNow')}</p>
+            <ul style={{ margin: 0, paddingLeft: '18px', display: 'flex', flexDirection: 'column', gap: '6px', color: 'var(--color-text-secondary)', fontSize: '0.9rem' }}>
+              {others.map((o) => (
+                <li key={o.code}>
+                  <a href={o.url} target="_blank" rel="noopener noreferrer" style={linkStyle}>{t('watchRecording', { language: o.label })} <span aria-hidden="true">↗</span></a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </section>
+    );
+  };
 
   return (
     <>
@@ -70,46 +117,8 @@ export default async function OnboardingPage({
       />
 
       <div style={{ paddingBottom: '48px', maxWidth: '860px' }}>
-        {primary ? (
-          <section style={cardStyle}>
-            <h2 style={cardTitle}>
-              {t('recordingTitle')}{primary.recordedOn ? ` (${primary.recordedOn})` : ''}
-            </h2>
-            {!isOwn && (
-              <p style={{ margin: '0 0 10px', color: 'var(--color-text-muted)', fontSize: '0.8125rem' }}>
-                🌐 {t('shownInLanguage', { language: primary.label })}
-              </p>
-            )}
-            <p style={{ margin: '0 0 16px', color: 'var(--color-text-secondary)', fontSize: '0.9rem' }}>{t('recordingBlurb')}</p>
-            <video
-              controls
-              preload="metadata"
-              playsInline
-              style={{ width: '100%', borderRadius: 'var(--radius-md)', border: '1px solid var(--color-border-default)', background: '#000', display: 'block' }}
-            >
-              <source src={primary.url} type="video/mp4" />
-              <a href={primary.url} style={linkStyle}>{t('download')}</a>
-            </video>
-
-            {others.length > 0 && (
-              <div style={{ marginTop: '16px' }}>
-                <p style={{ margin: '0 0 6px', color: 'var(--color-text-muted)', fontSize: '0.8125rem', fontWeight: 700 }}>{t('availableNow')}</p>
-                <ul style={{ margin: 0, paddingLeft: '18px', display: 'flex', flexDirection: 'column', gap: '6px', color: 'var(--color-text-secondary)', fontSize: '0.9rem' }}>
-                  {others.map((o) => (
-                    <li key={o.code}>
-                      <a href={o.url} target="_blank" rel="noopener noreferrer" style={linkStyle}>{t('watchRecording', { language: o.label })} <span aria-hidden="true">↗</span></a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </section>
-        ) : (
-          <section style={cardStyle}>
-            <h2 style={cardTitle}>{t('recordingTitle')}</h2>
-            <p style={{ margin: 0, color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: 1.6 }}>{t('videoComingSoonLocale')}</p>
-          </section>
-        )}
+        {renderCard(rec, t('recordingTitle'), t('recordingBlurb'))}
+        {renderCard(walk, t('walkthroughTitle'), t('walkthroughBlurb'))}
 
         {/* After the webinar */}
         <section style={cardStyle}>
