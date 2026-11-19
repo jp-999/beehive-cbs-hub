@@ -48,10 +48,19 @@ export default function BeeLoader() {
   if (!loading) return null;
 
   return (
-    <div className="bee-loader" role="status" aria-live="polite" aria-label="Loading">
-      <div className="bee-loader__bar">
-        <span className="bee-loader__bee" aria-hidden="true">🐝</span>
+    <>
+      <div className="bee-loader" role="status" aria-live="polite" aria-label="Loading">
+        <div className="bee-loader__bar">
+          <span className="bee-loader__bee" aria-hidden="true">🐝</span>
+        </div>
       </div>
-    </div>
+      <div className="bee-overlay" aria-hidden="true">
+        <div className="bee-overlay__stage">
+          <span className="bee-overlay__path" />
+          <span className="bee-overlay__glow" />
+          <span className="bee-overlay__bee"><span>🐝</span></span>
+        </div>
+      </div>
+    </>
   );
 }
