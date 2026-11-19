@@ -34,6 +34,12 @@ export default function Hero({ title, mascotName, intro, ctas }: HeroProps) {
         overflow: 'hidden',
       }}
     >
+      {/* Flying bee + floating pollen (decorative) */}
+      <span className="hero-bee" aria-hidden="true"><span>🐝</span></span>
+      <span className="hero-pollen" aria-hidden="true" style={{ left: '58%', bottom: '10%', animationDelay: '0s' }} />
+      <span className="hero-pollen" aria-hidden="true" style={{ left: '74%', bottom: '4%', animationDelay: '2.4s' }} />
+      <span className="hero-pollen" aria-hidden="true" style={{ left: '88%', bottom: '14%', animationDelay: '4.6s' }} />
+
       {/* Hex decorations */}
       <svg
         aria-hidden="true"
