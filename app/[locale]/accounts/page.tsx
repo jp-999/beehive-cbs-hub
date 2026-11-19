@@ -23,6 +23,7 @@ export default async function AccountsPage({
   const accountsSection = await getInstructionSection(locale, SECTION_IDS.accounts);
   const errors = await getCommonErrors(locale);
   const replacement = getPageMd(locale, 'replacement-account.md');
+  const taskTypes = getPageMd(locale, 'task-types.md');
 
   // Model/mode (#7) slides: redo slides whose error numbers include 7
   const modelSlides = errors.redo.filter((s) => s.errorNumbers.includes(7));
@@ -46,6 +47,23 @@ export default async function AccountsPage({
         <div className="doc-card">
           <Prose html={accountsSection.html} />
         </div>
+
+        {/* Two task types: comparison vs single-model (AI Mode) */}
+        {taskTypes && (
+          <section
+            style={{
+              marginTop: '24px',
+              background: 'var(--color-bg-surface)',
+              border: '1px solid var(--color-border-default)',
+              borderLeft: '4px solid var(--color-amber-500)',
+              borderRadius: 'var(--radius-lg)',
+              padding: '20px 24px',
+              boxShadow: 'var(--shadow-card)',
+            }}
+          >
+            <Prose html={taskTypes} />
+          </section>
+        )}
 
         {/* Replacement demo account (new feature) */}
         {replacement && (

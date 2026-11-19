@@ -11,9 +11,11 @@ Carry a real-world scenario through a natural multi-turn conversation with each 
 | **Accounts and subscriptions**  **NEW** | Use one new email address to buy ChatGPT Plus (100) with the virtual credit card. Do not use the demo account for any new subscription (see "Accounts and subscriptions"). |
 | **Model settings**  **NEW** | Use this thinking mode: **ChatGPT Light, Fable Medium**. Don't change it (section 2). |
 | **Memory**  **NEW** | Turn memory **off for all the models** (ChatGPT, Claude and Gemini) before you start. Follow the memory guide (section 2). |
+| **Run the chats in parallel**  **NEW** | **Run the chats of all 3 models at the same time.** Do not wait for one model to finish answering before you start the next. Send your message to each model, then move on to the others while they respond (see "Rules for carrying on the conversation"). |
 | **Gemini on mobile**  **NEW** | On Gemini mobile, turn auto model selection off (Menu > Settings > Usage limits), or the app can switch away from the required model mid-chat (see "Gemini on mobile"). |
-| **Trajectory JSON and artifacts**  **NEW** | Export a trajectory JSON for every model run with AI Exporter, and upload each model's generated files as a zip named model_x_turn#_file# (or a zip with no_artifacts.txt if there are none) (section 2). |
-| **Task attachments**  **NEW** | Some tasks have an attachment link. If a link is given, download the files and attach them to all 3 models with the first message, or the task will fail. No link but required artifacts listed: create the files yourself. Both empty: no attachments needed. Upload every file you used as one attachments.zip (see "Task attachments"). |
+| **Trajectory JSON and artifacts**  **NEW** | Comparison tasks: export a trajectory JSON for every model run with AI Exporter, and upload each model's generated files as a zip named model_x_turn#_file# (or a zip with no_artifacts.txt if there are none) (section 2). Single-model tasks export a PDF instead (see "Two task types: comparison and single model"). |
+| **Task attachments**  **NEW** | Some tasks have an attachment link. If a link is given, download the files and attach them to all 3 models with the first message, or the task will fail. No link but required artifacts listed: create the files yourself. Link given but some required artifacts are missing from the files: use the provided files and create the missing ones. Both empty: no attachments needed. Upload every file you used as one attachments.zip (see "Task attachments"). |
+| **Task types**  **NEW** | There are now two task types. Comparison tasks (3 models, ranking) work as before. Single-model tasks (Google AI Mode, Gemini 4 Hydrogen) use one model: chat at https://google.com/ai, select Gemini 4 Hydrogen, copy the public link from Share (https://share.google/aimode/...), export the chat as a PDF (trajectory_a.pdf) with "Show original chat link" and "Include thinking content" ticked, and upload the PDF. No trajectory JSON (see "Two task types: comparison and single model"). |
 | **Overall satisfaction**  **CHANGED** | A 5 is not possible if any rubric criterion is an unflagged No, or if a critical failure occurred (section 4). |
 | **Critical failures**  **CHANGED** | When one occurs, log it as Issue #1 and rate Overall satisfaction 3, 2 or 1 (never 4 or 5) (section 5). |
 | **[FLAG] rules**  **CHANGED** | A broken criterion that wasn't met is still No, with the flag. Flag only defective criteria, never to excuse a miss (section 9). |
@@ -23,7 +25,7 @@ Carry a real-world scenario through a natural multi-turn conversation with each 
 | **Ranking Justification**  **CHANGED** | Name the tie-breaker and any guardrail exception. Give all three models the same score only if they really are equal; don't compress to 4-4-4 (section 11). |
 | **Examples and flowcharts**  **CHANGED** | There are now 4 rated examples (the old Example 2 was removed). The ranking flowchart and the 5-step overview picture show the new tie order (sections 11 and 12). |
 
-![Beehive Instructions diagram](media/image1.gif)
+![Beehive Instructions diagram](media/image4.gif)
 
 ## Accounts and subscriptions NEW
 
@@ -53,7 +55,7 @@ In your task assignment sheet, each row gives you the scenario setup. Before sta
 | **conversation_turn_number** | The approximate number of turns the original conversation took (e.g., 4 to 20+ turns). | Aim for a comparable multi-turn depth needed to complete all next_steps and reach the user_goal. |
 | **rubric (scored later)** | A predefined checklist (typically 3 binary Yes/No criteria) capturing key target outcomes for the task. | Do not steer or game the chat around these criteria. Carry out the conversation naturally first, then score each criterion (Yes, No, or N/R) at the end of the conversation. |
 
-| **Web and Mobile**<br>**On both surfaces:** select the correct model, take a **screenshot** of the initial prompt with the model visible, and upload it as the Model Check.<br>**Web:** run the whole conversation in the browser.<br>**Mobile:** run the whole conversation in the model's **mobile app**, with the correct model selected.<br>**1.** Continue the chat on mobile, following the next steps, and **share the link** if the app lets you.<br>**2.** If the chat **can't be shared from mobile**, finish it on mobile first. Then open the same conversation on the **web**, signed in to the same account, and **export it** (trajectory JSON, via AI Exporter: saveai.net). Download any generated files too.<br>**Export only.** Do not send any more messages on the web. |
+| **Web and Mobile**<br>**On both surfaces:** select the correct model, take a **screenshot** of the initial prompt with the model visible, and upload it as the Model Check.<br>**Web:** run the whole conversation in the browser.<br>**Mobile:** run the whole conversation in the model's **mobile app**, with the correct model selected.<br>**1.** Continue the chat on mobile, following the next steps, and **share the link** if the app lets you.<br>**2.** If the chat **can't be shared from mobile**, finish it on mobile first. Then open the same conversation on the **web**, signed in to the same account, and **export it** (trajectory JSON, via AI Exporter: saveai.net; single-model tasks export a PDF instead, see "Two task types: comparison and single model"). Download any generated files too.<br>**Export only.** Do not send any more messages on the web. |
 | --- |
 
 | **Use exactly this thinking mode. Do not change it. [[NEW]]**<br>**ChatGPT: Light** thinking mode.<br>**Fable: Medium** thinking mode.<br>Check the thinking mode **before you send Turn 1** and leave it on that mode for the whole chat. A model run in any other mode is not valid for this task. |
@@ -74,7 +76,7 @@ In your task assignment sheet, each row gives you the scenario setup. Before sta
 
 - **Toggle auto model selection off.** Check that the correct model is still selected before you send Turn 1.
 
-### Getting the trajectory JSON (every model run) NEW
+### Getting the trajectory JSON (comparison tasks, every model run) NEW
 
 You need a trajectory JSON for **every model run**, on Web and on Mobile, using AI Exporter (https://saveai.net/).
 
@@ -104,19 +106,55 @@ Each model has its own Artifacts upload. Use the model's letter in the file name
 
 ### Task attachments NEW
 
-Some tasks have an **ATTACHMENTS** block (the attachment_link column). It has three parts: Attachment links, Required artifacts, and What to do. Read it before you send Turn 1. Check which of the three cases below applies:
+Some tasks have an **ATTACHMENTS** block (the attachment_link column). It has three parts: Attachment links, Required artifacts, and What to do. Read it before you send Turn 1. Check which of the four cases below applies:
 
 - **An attachment link is given.** Download the files from the link (unzip them if they come as a zip). Attach all of them to all 3 models with the first message, before the prompt that needs them. Every model must get the exact same files.
 
 - **No link, but Required artifacts are listed.** Create those files yourself. They must be realistic and in the target language and country context. Give the same files to all 3 models.
 
+- **A link is given, but some of the Required artifacts are missing from the files.** Use the files you were given and create the missing ones yourself. The files you create must be realistic and in the target language and country context. Give all of them (the provided files and the ones you created) to all 3 models with the first message, before the prompt that needs them. Every model must get the exact same files.
+
 - **Both are empty.** No attachments are needed. Go ahead without them.
 
-**If a task has an attachment link and you do not attach the files, the task will fail.** Never replace linked files with your own.
+**If a task has an attachment link and you do not attach the files, the task will fail.** Never replace linked files with your own: you only add the files that are missing.
 
 - **Upload every file you used** as one **attachments.zip** in the Attachments step.
 
+### Two task types: comparison and single model NEW
+
+Tasks now come in two types. Check the Scenario Details step of your task to see which one you have.
+
+- **Comparison tasks (the old ones):** you chat with 3 models (A, B and C), rate each one and rank them. Everything in this guide applies. On the web, the Gemini conversations are done at https://gemini.google.com/. On mobile, the Gemini conversations are done in the Gemini app. Turn auto model selection off first (Menu > Settings > Usage limits), see "Gemini on mobile: turn off auto model selection".
+
+- **Single-model tasks (Google AI Mode, Gemini 4 Hydrogen):** the Scenario Details step shows "🤖 MODEL — GOOGLE AI MODE, GEMINI 4 HYDROGEN". You chat with one model only, so you rate one model and there is no ranking step.
+
+### Single-model task: what to do NEW
+
+- **Go to https://google.com/ai** and run the whole conversation there. Sign in with your assigned demo account and select **Gemini 4 Hydrogen** before you send Turn 1. There is no Task mode: just select the model.
+
+- **AI Mode is NOT done on the Gemini app.** DO NOT use the Gemini app or https://gemini.google.com/ for this task type. Use https://google.com/ai on Web, or the Google app on Mobile.
+
+- **Copy the share link.** Click **Share** in AI Mode and copy the public link. It looks like https://share.google/aimode/... Do not paste the address-bar URL, or the https://www.google.com/search?... link printed in the PDF.
+
+- **No trajectory JSON is needed** for this task type.
+
+- **Upload a PDF instead.** In the extension choose **Export as PDF** and tick both **Show original chat link** and **Include thinking content**. Name the file **trajectory_a.pdf** and upload it. On Mobile, finish the chat in the Google app, then open the same chat on the web, signed in to the same account, and export the PDF from there. Export only: do not send any more messages.
+
+- **If the extension asks you to log in,** log in with Google and choose your demo account.
+
+- **Take the Model Check screenshot** before you send Turn 1, with the model (Gemini 4 Hydrogen) and “AI Mode” visible. It should look like this:
+
+![Beehive Instructions diagram](media/image2.png)
+
+- **Upload the artifacts zip.** Name the generated files model_a_turn1_file1, model_a_turn1_file2, model_a_turn2_file1 ... model_a_turn#_file#, zip them and upload the zip. No artifacts? Upload a zip with a single file named no_artifacts.txt.
+
+- **Attachments:** if the task has an ATTACHMENTS block, follow "Task attachments" (if files are missing from the link, create them), but give the files to the one model only. Upload every file you used as one attachments.zip in the Attachments step.
+
+- Rate the conversation (Overall satisfaction, Issues, Country fit) and score the rubric as in sections 4 to 10, for the one model.
+
 ### Rules for carrying on the conversation
+
+- **⚠️ Run all the chats IN PARALLEL (comparison tasks).** Do not just sit and wait while one model responds. Open the chats for all 3 models, send the message to each of them one after the other, and while they answer, go to the next model and keep working there. Never wait for one model to finish before you start the next. Do this on every turn, from Turn 1 until the end.
 
 - **Do not stop after Turn 1:** you must carry out the multi-turn journey following the next_steps until the user_goal is met (or until the model repeatedly fails and cannot recover).
 
@@ -182,7 +220,7 @@ Evaluate each missed criterion on its own first. Then, when you score Overall sa
 
 The issue taxonomy has three levels. Each one sits inside the one before it.
 
-![Beehive Instructions diagram](media/image3.gif)
+![Beehive Instructions diagram](media/image1.gif)
 
 - **L1 (dimension)** is the broad area, such as Communication & Collaboration. There are 4. You never pick an L1 yourself.
 
@@ -398,7 +436,7 @@ Once Model A, Model B, and Model C have each been rated on Overall Satisfaction,
 
 **Start from what you already recorded.** The rubric tells you what each product delivered by the end of the conversation, and the logged issues tell you what went wrong and what it cost the user to get there. Do not re-rate any model here.
 
-![Beehive Instructions diagram](media/image2.gif)
+![Beehive Instructions diagram](media/image3.gif)
 
 **Rank first by Overall Satisfaction.** A model with a lower overall satisfaction score must never be ranked ahead of a model with a higher score. If two or more models have the same Overall Satisfaction, break the tie with these rules, in order:
 
@@ -572,8 +610,8 @@ Before moving to the next row, verify these quick checks:
 
 | ☐  **Surface and screenshot:** you tested on the surface in the task row, with the correct model selected and the Model Check screenshot uploaded (Web and Mobile). For Mobile: link shared, or the chat exported from the web with no new messages sent. |
 | --- |
-| ☐  **Thinking mode:** ChatGPT on Light and Fable on Medium, unchanged for the whole chat. |
-| ☐  **Trajectory JSON and artifacts:** the JSON is exported with AI Exporter for every model run. Generated files are named **model_x_turn#_file#**, zipped, and uploaded (or a zip with **no_artifacts.txt** if there are none). |
+| ☐  **Thinking mode:** ChatGPT on Light and Fable on Medium, unchanged for the whole chat.<br>☐  **Parallel chats:** for comparison tasks, you ran the 3 chats at the same time and did not wait for one model to finish before starting the next. |
+| ☐  **Trajectory JSON and artifacts:** for comparison tasks, the JSON is exported with AI Exporter for every model run (single-model tasks: the PDF named trajectory_a.pdf and the share link instead). Generated files are named **model_x_turn#_file#**, zipped, and uploaded (or a zip with **no_artifacts.txt** if there are none). |
 | ☐  **Did you complete the multi-turn journey?** Your conversation link must reflect the full multi-turn interaction guided by next_steps, not just Turn 1. |
 | ☐  **Does your issue count match your satisfaction score?** If Very satisfied (5) → No issues in Column 3 and N/A in Columns 4 and 5. If score ≤ 4 → 1 to 3 distinct L2 sub-dimensions listed in Column 3 in strict order of impact (#1 = biggest driver of dissatisfaction). |
 | ☐  **Does every line in "Detail of issues" start with `#1: [L3 Loss Tag] - ...`?** Check that the numbering (#1, #2, #3) matches the exact order of the L2 sub-dimensions selected in Column 3, and uses an exact bracketed [L3 Loss Tag] from the taxonomy table. |

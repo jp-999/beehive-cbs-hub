@@ -45,6 +45,21 @@ On the Gemini mobile app, Gemini sometimes switches from the required model to a
 
 > 📣 Source: [Gemini Mobile: Turn Off Auto Model Selection](https://community.outlier.ai/t/gemini-mobile-turn-off-auto-model-selection/2982084) (Outlier Community)
 
+## 🔀 Which task type am I on?
+
+Check the **Scenario Details** step of your task before you start.
+
+- **Comparison task (3 models):** run Gemini at **gemini.google.com** (web) or the **Gemini app** (mobile), with auto model selection turned off.
+- **Single-model task** (Scenario Details shows **🤖 MODEL — GOOGLE AI MODE, GEMINI 4 HYDROGEN**): run the whole chat at **[google.com/ai](https://google.com/ai)** (web) or the **Google app** (mobile). **Do not** use the Gemini app or gemini.google.com for this type.
+
+Common single-model mix-ups:
+
+- Use the **Share in AI Mode** link (`share.google/aimode/…`), not the address-bar URL.
+- Upload a **PDF** (`trajectory_a.pdf`), not a trajectory JSON.
+- Select **Gemini 4 Hydrogen** and capture the Model Check screenshot with **AI Mode** visible before Turn 1.
+
+Full steps are in the Instructions (Materials), section 2.
+
 ## 💳 Payment & credit card
 
 ### Activate your virtual card
