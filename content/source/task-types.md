@@ -25,7 +25,7 @@ Tasks now come in two types. Check the **Scenario Details** step of your task to
 Google Workspace is **off by default** in AI Mode, so the model can't send emails by the end of the run. **Turn it on before you start the run.** This short walkthrough shows how:
 
 <video class="hub-video" controls preload="metadata" playsinline>
-  <source src="media/videos/connect-workspace.mov" type="video/mp4" />
+  <source src="media/videos/connect-workspace.mov" />
 </video>
 
 [Open the video](media/videos/connect-workspace.mov)

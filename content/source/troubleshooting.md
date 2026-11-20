@@ -64,7 +64,7 @@ Check the **Scenario Details** step of your task before you start.
 Google Workspace is **off by default**, so AI Mode can't send emails by the end of the run. **Turn it on before you start the run.** Walkthrough:
 
 <video class="hub-video" controls preload="metadata" playsinline>
-  <source src="media/videos/connect-workspace.mov" type="video/mp4" />
+  <source src="media/videos/connect-workspace.mov" />
 </video>
 
 [Open the video](media/videos/connect-workspace.mov)
