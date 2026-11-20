@@ -45,6 +45,16 @@ On the Gemini mobile app, Gemini sometimes switches from the required model to a
 
 > 📣 Source: [Gemini Mobile: Turn Off Auto Model Selection](https://community.outlier.ai/t/gemini-mobile-turn-off-auto-model-selection/2982084) (Outlier Community)
 
+## 🖥️ Change the model to ChatGPT 6 Astra
+
+For comparison tasks, ChatGPT must run on **cGPT 6 Astra** in **Work mode** (not Instant or "gpt-6-thinking"). This short walkthrough shows how to switch the model:
+
+<video class="hub-video" controls preload="metadata" playsinline>
+  <source src="media/videos/chatgpt-astra.mov" />
+</video>
+
+[Open the video](media/videos/chatgpt-astra.mov)
+
 ## 🔀 Which task type am I on?
 
 Check the **Scenario Details** step of your task before you start.
