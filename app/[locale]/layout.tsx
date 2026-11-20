@@ -4,8 +4,7 @@ import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server
 import { NextIntlClientProvider } from 'next-intl';
 import { routing } from '@/i18n/routing';
 import { siteConfig } from '@/site.config';
-import { SECTIONS } from '@/lib/sections';
-import type { SectionId } from '@/lib/sections';
+import { buildSearchIndex } from '@/lib/search-index';
 import Nav from '@/components/Nav';
 import Footer from '@/components/Footer';
 import BeeLoader from '@/components/BeeLoader';
@@ -16,18 +15,6 @@ export const dynamicParams = false;
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
-
-// Map section IDs to nav message keys
-const sectionNavKeys: Record<SectionId, string> = {
-  onboarding: 'onboarding',
-  materials: 'materials',
-  accounts: 'onboarding', // not inNav, won't be used
-  'common-errors': 'commonErrors',
-  examples: 'examples',
-  troubleshooting: 'troubleshooting',
-  'outlier-community': 'outlierCommunity',
-  contact: 'contact',
-};
 
 export default async function LocaleLayout({
   children,
@@ -50,20 +37,47 @@ export default async function LocaleLayout({
   const tSkip = await getTranslations({ locale, namespace: 'skipLink' });
   const tLang = await getTranslations({ locale, namespace: 'languageSwitcher' });
 
-  // Build nav items: Home + inNav sections
-  const homeItem = {
-    id: 'home' as const,
-    label: tNav('home'),
-    target: { kind: 'internal' as const, href: '/' as `/${string}` },
+  // Grouped nav + search
+  const groups = [
+    {
+      id: 'start',
+      label: tNav('groupStart'),
+      items: [
+        { label: tNav('onboarding'), href: '/onboarding' as const },
+        { label: tNav('accounts'), href: '/accounts' as const },
+      ],
+    },
+    {
+      id: 'guidelines',
+      label: tNav('groupGuidelines'),
+      items: [
+        { label: tNav('materials'), href: '/materials' as const },
+        { label: tNav('qcSpec'), href: '/materials/qc-spec' as const },
+        { label: tNav('commonErrors'), href: '/common-errors' as const },
+        { label: tNav('examples'), href: '/examples' as const },
+        { label: tNav('memoryGuide'), href: '/materials/memory-guide' as const },
+      ],
+    },
+    {
+      id: 'help',
+      label: tNav('groupHelp'),
+      items: [
+        { label: tNav('troubleshooting'), href: '/troubleshooting' as const },
+        { label: tNav('contact'), href: '/contact' as const },
+      ],
+    },
+  ];
+
+  const oc = siteConfig.links.outlierCommunity;
+  const community = oc.status === 'ready' ? { label: tNav('outlierCommunity'), href: oc.value } : null;
+
+  const searchEntries = buildSearchIndex();
+  const searchStrings = {
+    triggerLabel: tNav('searchLabel'),
+    placeholder: tNav('searchPlaceholder'),
+    hint: tNav('searchHint'),
+    noResults: tNav('searchNoResults'),
   };
-
-  const sectionItems = SECTIONS.filter((s) => s.inNav).map((s) => ({
-    id: s.id,
-    label: tNav(sectionNavKeys[s.id] as Parameters<typeof tNav>[0]),
-    target: s.target,
-  }));
-
-  const navItems = [homeItem, ...sectionItems];
 
   const currentLocaleName =
     siteConfig.locales.find((l) => l.code === locale)?.label ?? locale;
@@ -87,11 +101,15 @@ export default async function LocaleLayout({
             {tSkip('label')}
           </a>
           <Nav
-            items={navItems}
             brand={{ label: '🐝 Beehive CBs Hub', href: '/' }}
+            homeLabel={tNav('home')}
+            groups={groups}
+            community={community}
             locales={siteConfig.locales}
             currentLocale={locale}
             languageSwitcherLabel={languageSwitcherLabel}
+            searchEntries={searchEntries}
+            searchStrings={searchStrings}
           />
           <main
             id="main"

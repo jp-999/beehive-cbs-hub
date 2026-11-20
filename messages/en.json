@@ -9,12 +9,22 @@
   "nav": {
     "home": "Home",
     "onboarding": "Onboarding",
+    "accounts": "Accounts & Setup",
     "materials": "Materials",
+    "qcSpec": "QC Spec Rubric",
+    "memoryGuide": "Turn off memory",
     "commonErrors": "Common Errors",
     "examples": "Examples",
     "troubleshooting": "Troubleshooting",
     "contact": "Contact",
-    "outlierCommunity": "Outlier Community"
+    "outlierCommunity": "Outlier Community",
+    "groupStart": "Start",
+    "groupGuidelines": "Guidelines",
+    "groupHelp": "Help",
+    "searchLabel": "Search the hub",
+    "searchPlaceholder": "Search guidelines, errors, examples…",
+    "searchHint": "Search",
+    "searchNoResults": "No matches. Try another keyword."
   },
   "languageSwitcher": {
     "label": "Switch language (current: {locale})",
