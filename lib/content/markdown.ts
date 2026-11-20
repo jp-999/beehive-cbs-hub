@@ -15,15 +15,25 @@ import type { TocItem, HtmlSection } from './types';
 // ── Rehype plugin: root-relative media src (+ GitHub Pages basePath), loading=lazy ──
 function rehypeImages() {
   const base = process.env.PAGES_BASE_PATH || '';
+  const isLocal = (v: unknown): v is string =>
+    typeof v === 'string' && v.length > 0 && !v.startsWith('http') && !v.startsWith('data:') && !v.startsWith('#');
+  const rootify = (v: string) => base + (v.startsWith('/') ? v : '/' + v);
   return function (tree: HastRoot) {
     visit(tree, 'element', (node: Element) => {
-      if (node.tagName !== 'img') return;
-      const src = node.properties?.src as string | undefined;
-      if (src && !src.startsWith('http') && !src.startsWith('data:')) {
-        const rooted = src.startsWith('/') ? src : '/' + src;
-        node.properties!.src = base + rooted;
+      const tag = node.tagName;
+      if (tag === 'img' || tag === 'source' || tag === 'video' || tag === 'audio') {
+        const src = node.properties?.src;
+        if (isLocal(src)) node.properties!.src = rootify(src);
+        const poster = node.properties?.poster;
+        if (isLocal(poster)) node.properties!.poster = rootify(poster);
+        if (tag === 'img') node.properties!.loading = 'lazy';
+      } else if (tag === 'a') {
+        // Rewrite local media download links so they resolve under basePath.
+        const href = node.properties?.href;
+        if (isLocal(href) && (href.startsWith('media/') || href.startsWith('/media/'))) {
+          node.properties!.href = rootify(href);
+        }
       }
-      node.properties!.loading = 'lazy';
     });
   };
 }

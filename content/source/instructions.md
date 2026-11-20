@@ -15,7 +15,7 @@ Carry a real-world scenario through a natural multi-turn conversation with each 
 | **Gemini on mobile**  **NEW** | On Gemini mobile, turn auto model selection off (Menu > Settings > Usage limits), or the app can switch away from the required model mid-chat (see "Gemini on mobile"). |
 | **Trajectory JSON and artifacts**  **NEW** | Comparison tasks: export a trajectory JSON for every model run with AI Exporter, and upload each model's generated files as a zip named model_x_turn#_file# (or a zip with no_artifacts.txt if there are none) (section 2). Single-model tasks export a PDF instead (see "Two task types: comparison and single model"). |
 | **Task attachments**  **NEW** | Some tasks have an attachment link. If a link is given, download the files and attach them to all 3 models with the first message, or the task will fail. No link but required artifacts listed: create the files yourself. Link given but some required artifacts are missing from the files: use the provided files and create the missing ones. Both empty: no attachments needed. Upload every file you used as one attachments.zip (see "Task attachments"). |
-| **Task types**  **NEW** | There are now two task types. Comparison tasks (3 models, ranking) work as before. Single-model tasks (Google AI Mode, Gemini 4 Hydrogen) use one model: chat at https://google.com/ai, select Gemini 4 Hydrogen, copy the public link from Share (https://share.google/aimode/...), export the chat as a PDF (trajectory_a.pdf) with "Show original chat link" and "Include thinking content" ticked, and upload the PDF. No trajectory JSON (see "Two task types: comparison and single model"). |
+| **Task types**  **NEW** | There are now two task types. Comparison tasks (3 models, ranking) work as before. Single-model tasks (Google AI Mode, Gemini 4 Hydrogen) use one model: chat at https://google.com/ai, select Gemini 4 Hydrogen, copy the public link from Share (https://share.google/aimode/...), save the chat as a PDF (trajectory_a.pdf) with the browser Print option (right-click the page, Print, Save as PDF), and upload the PDF. No trajectory JSON (see "Two task types: comparison and single model"). |
 | **Overall satisfaction**  **CHANGED** | A 5 is not possible if any rubric criterion is an unflagged No, or if a critical failure occurred (section 4). |
 | **Critical failures**  **CHANGED** | When one occurs, log it as Issue #1 and rate Overall satisfaction 3, 2 or 1 (never 4 or 5) (section 5). |
 | **[FLAG] rules**  **CHANGED** | A broken criterion that wasn't met is still No, with the flag. Flag only defective criteria, never to excuse a miss (section 9). |
@@ -25,7 +25,7 @@ Carry a real-world scenario through a natural multi-turn conversation with each 
 | **Ranking Justification**  **CHANGED** | Name the tie-breaker and any guardrail exception. Give all three models the same score only if they really are equal; don't compress to 4-4-4 (section 11). |
 | **Examples and flowcharts**  **CHANGED** | There are now 4 rated examples (the old Example 2 was removed). The ranking flowchart and the 5-step overview picture show the new tie order (sections 11 and 12). |
 
-![Beehive Instructions diagram](media/image4.gif)
+![Beehive Instructions diagram](media/image1.gif)
 
 ## Accounts and subscriptions NEW
 
@@ -134,17 +134,19 @@ Tasks now come in two types. Check the Scenario Details step of your task to see
 
 - **AI Mode is NOT done on the Gemini app.** DO NOT use the Gemini app or https://gemini.google.com/ for this task type. Use https://google.com/ai on Web, or the Google app on Mobile.
 
+- **Turn on search history before chatting.** For single-model tasks, make sure your search history is turned on before you start the conversation.
+
 - **Copy the share link.** Click **Share** in AI Mode and copy the public link. It looks like https://share.google/aimode/... Do not paste the address-bar URL, or the https://www.google.com/search?... link printed in the PDF.
+
+- **Cannot generate a share link?** Turn off **SafeSearch**: scroll up to the top of the chat, click your profile, scroll down until you find SafeSearch, and turn it off. Then try the share link again. If you still cannot share after this, send the taskID to a QM in the war room or message them in community, and wait for their response.
 
 - **No trajectory JSON is needed** for this task type.
 
-- **Upload a PDF instead.** In the extension choose **Export as PDF** and tick both **Show original chat link** and **Include thinking content**. Name the file **trajectory_a.pdf** and upload it. On Mobile, finish the chat in the Google app, then open the same chat on the web, signed in to the same account, and export the PDF from there. Export only: do not send any more messages.
-
-- **If the extension asks you to log in,** log in with Google and choose your demo account.
+- **Upload a PDF instead.** Do not use the extension for this. Right-click on the page, click **Print**, then choose **Save as PDF**. Name the file **trajectory_a.pdf** and upload it. On Mobile, finish the chat in the Google app, then open the same chat on the web, signed in to the same account, and save the PDF from there. Do not send any more messages after saving.
 
 - **Take the Model Check screenshot** before you send Turn 1, with the model (Gemini 4 Hydrogen) and “AI Mode” visible. It should look like this:
 
-![Beehive Instructions diagram](media/image2.png)
+![Beehive Instructions diagram](media/image4.png)
 
 - **Upload the artifacts zip.** Name the generated files model_a_turn1_file1, model_a_turn1_file2, model_a_turn2_file1 ... model_a_turn#_file#, zip them and upload the zip. No artifacts? Upload a zip with a single file named no_artifacts.txt.
 
@@ -220,7 +222,7 @@ Evaluate each missed criterion on its own first. Then, when you score Overall sa
 
 The issue taxonomy has three levels. Each one sits inside the one before it.
 
-![Beehive Instructions diagram](media/image1.gif)
+![Beehive Instructions diagram](media/image3.gif)
 
 - **L1 (dimension)** is the broad area, such as Communication & Collaboration. There are 4. You never pick an L1 yourself.
 
@@ -436,7 +438,7 @@ Once Model A, Model B, and Model C have each been rated on Overall Satisfaction,
 
 **Start from what you already recorded.** The rubric tells you what each product delivered by the end of the conversation, and the logged issues tell you what went wrong and what it cost the user to get there. Do not re-rate any model here.
 
-![Beehive Instructions diagram](media/image3.gif)
+![Beehive Instructions diagram](media/image2.gif)
 
 **Rank first by Overall Satisfaction.** A model with a lower overall satisfaction score must never be ranked ahead of a model with a higher score. If two or more models have the same Overall Satisfaction, break the tie with these rules, in order:
 
